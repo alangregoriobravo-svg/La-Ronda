@@ -342,7 +342,43 @@ body {
 /* =========================================
    VERSIÓN CELULAR (RESPONSIVE)
 ========================================= */
-@media (max-width: 768px) {
+@media  (max-width: 768px) {
+    /* ... (tus otros estilos de celu) ... */
+
+    .encabezado-avanzado {
+        padding: 10px;
+    }
+
+    .header-izq {
+        margin-bottom: 15px; /* Separa el logo del buscador */
+    }
+
+    .header-centro {
+        width: 100%; /* Que ocupe todo el ancho del celu */
+    }
+
+    .caja-busqueda {
+        flex-direction: column; /* Pone el buscador, la categoría y el botón uno abajo del otro */
+        border-radius: 8px;
+        background-color: transparent; /* Para que no se vea una caja blanca gigante */
+        gap: 5px;
+    }
+
+    .input-busqueda, .input-categoria, .btn-buscar {
+        width: 100%; /* Todos ocupan el ancho total */
+        border-radius: 5px !important; /* Les damos forma individual */
+        border: 1px solid #ddd;
+        margin-bottom: 5px;
+    }
+
+    .input-categoria {
+        border-left: none; /* Quitamos la rayita de división de PC */
+    }
+
+    .btn-buscar {
+        padding: 15px; /* Más fácil de tocar con el dedo */
+    }
+}
     .encabezado-avanzado { flex-direction: column; padding: 15px; }
     
     .marca img { height: 280px; } /* Carteles grandes en celu */
@@ -361,7 +397,7 @@ body {
     .tarjeta-producto { width: 100%; }
 
     .precio-nuevo { font-size: 2rem; }
-}
+
 
 /* =========================================
    FOOTER
