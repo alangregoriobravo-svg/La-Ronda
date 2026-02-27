@@ -23,18 +23,14 @@
         <a href="index.html"><img src="logo-la-ronda.jpg" alt="Logo La Ronda" class="logo-login"></a>
         <h2>Crear Cuenta</h2>
         
-        <form action="index.html">
-            <div class="grupo-input">
-                <label>Nombre y Apellido</label>
-                <input type="text" placeholder="Ej: Paloma Pérez" required>
-            </div>
+        <form id="form-registro">
             <div class="grupo-input">
                 <label>Correo Electrónico</label>
-                <input type="email" placeholder="ejemplo@correo.com" required>
+                <input type="email" id="email" placeholder="ejemplo@correo.com" required>
             </div>
             <div class="grupo-input">
                 <label>Contraseña</label>
-                <input type="password" placeholder="Mínimo 8 caracteres" required>
+                <input type="password" id="password" placeholder="Mínimo 6 caracteres" required minlength="6">
             </div>
             <button type="submit" class="boton-principal">Registrarme</button>
         </form>
@@ -43,5 +39,37 @@
             <p>¿Ya tenés cuenta? <a href="ingresar.html">Ingresá acá</a></p>
         </div>
     </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+
+        const firebaseConfig = {
+          apiKey: "AIzaSyDTk7jVyz6wacaXF1L-mDdshz0xBMn9WBI",
+          authDomain: "la-ronda-ae0d0.firebaseapp.com",
+          projectId: "la-ronda-ae0d0",
+          storageBucket: "la-ronda-ae0d0.firebasestorage.app",
+          messagingSenderId: "347719632529",
+          appId: "1:347719632529:web:e74f4a02b62b3233122130"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        document.getElementById('form-registro').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    alert("¡Cuenta creada con éxito!");
+                    window.location.href = "index.html"; // Manda al inicio
+                })
+                .catch((error) => {
+                    alert("Hubo un error: " + error.message);
+                });
+        });
+    </script>
 </body>
 </html>
