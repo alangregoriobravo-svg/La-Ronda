@@ -28,6 +28,8 @@
                     <option value="artesanias">Artesanías</option>
                     <option value="indumentaria">Indumentaria</option>
                     <option value="deco">Deco y Hogar</option>
+                    <option value="computacion">Computación</option>
+                    <option value="electricidad">Electricidad</option>
                 </select>
                 <button type="button" class="btn-buscar">Buscar</button>
             </form>
@@ -44,130 +46,73 @@
 
     <section class="carrusel-publicidad">
         <div class="carrusel-track">
-            <div class="marca"><a href="https://www.instagram.com/paluney.electrica" target="_blank"><img src="paluney.jpg" alt="Paluney Eléctrica"></a></div>
-            <div class="marca"><a href="https://www.instagram.com/la.boutique.de.paloma" target="_blank"><img src="paloma.jpg" alt="La Boutique de Paloma"></a></div>
-            <div class="marca"><img src="https://via.placeholder.com/380x140?text=Tu+Marca+Aca" alt="Espacio Disponible"></div>
-             <div class="marca"><a href="https://www.instagram.com/paluney.electrica" target="_blank"><img src="paluney.jpg" alt="Paluney Eléctrica"></a></div>
-            <div class="marca"><a href="https://www.instagram.com/la.boutique.de.paloma" target="_blank"><img src="paloma.jpg" alt="La Boutique de Paloma"></a></div>
-            <div class="marca"><img src="https://via.placeholder.com/380x140?text=Tu+Marca+Aca" alt="Espacio Disponible"></div>
-        
-           </div>
+            <div class="marca"><a href="https://www.instagram.com/paluney.electrica" target="_blank"><img src="paluney.jpg" alt="Paluney"></a></div>
+            <div class="marca"><a href="https://www.instagram.com/la.boutique.de.paloma" target="_blank"><img src="paloma.jpg" alt="Paloma"></a></div>
+            <div class="marca"><img src="https://via.placeholder.com/380x140?text=Tu+Marca+Aca" alt="Marca"></div>
+            <div class="marca"><a href="https://www.instagram.com/paluney.electrica" target="_blank"><img src="paluney.jpg" alt="Paluney"></a></div>
+            <div class="marca"><a href="https://www.instagram.com/la.boutique.de.paloma" target="_blank"><img src="paloma.jpg" alt="Paloma"></a></div>
+            <div class="marca"><img src="https://via.placeholder.com/380x140?text=Tu+Marca+Aca" alt="Marca"></div>
+        </div>
     </section>
 
-<h2 style="text-align: center; color: #A64B31;">🔥 Destacados de la Semana</h2>
-<div class="carrusel-destacados">
-    <div class="tarjeta-producto">
-        <div class="etiqueta-descuento">10% OFF</div>
-        <img src="cables-trefilcon.jpg" alt="Rollo Unipolar">
-        <h3 class="titulo-producto">Rollo Unipolar 2,5mm x 100m</h3>
-        <div class="precio-viejo">$85.000</div>
-        <div class="precio-nuevo">$76.500</div>
-        <button class="boton-agregar" onclick="agregarAlCarrito('Rollo Unipolar 2,5mm', 76500)">Comprar</button>
-    </div>
-    <div class="tarjeta-producto">
-        <div class="etiqueta-descuento">15% OFF</div>
-        <img src="auricular-jbl.jpg" alt="Auricular JBL">
-        <h3 class="titulo-producto">Auricular JBL</h3>
-        <div class="precio-viejo">$25.000</div>
-        <div class="precio-nuevo">$21.250</div>
-        <button class="boton-agregar" onclick="agregarAlCarrito('Auricular JBL', 21250)">Comprar</button>
-    </div>
-</div>
+    <main class="contenedor-principal">
+        <h2 style="text-align: center; color: #A64B31;">🔥 Destacados de la Semana</h2>
+        <div class="carrusel-destacados">
+            <div class="tarjeta-producto">
+                <div class="etiqueta-descuento">10% OFF</div>
+                <img src="cables-trefilcon.jpg" alt="Rollo Unipolar">
+                <h3 class="titulo-producto">Rollo Unipolar 2,5mm x 100m</h3>
+                <div class="precio-viejo">$85.000</div>
+                <div class="precio-nuevo">$76.500</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Rollo Unipolar 2,5mm', 76500)">Comprar</button>
+            </div>
+            <div class="tarjeta-producto">
+                <div class="etiqueta-descuento">15% OFF</div>
+                <img src="auricular-jbl.jpg" alt="Auricular JBL">
+                <h3 class="titulo-producto">Auricular JBL</h3>
+                <div class="precio-viejo">$25.000</div>
+                <div class="precio-nuevo">$21.250</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Auricular JBL', 21250)">Comprar</button>
+            </div>
+        </div>
 
-<br><br>
+        <br><br>
 
-<h2 style="text-align: center; color: #A64B31;">Nuestro Catálogo</h2>
-<div class="botones-categoria">
-    <button class="btn-cat activo" onclick="filtrar('todos')">Todos</button>
-    <button class="btn-cat" onclick="filtrar('auriculares')">Auriculares</button>
-    <button class="btn-cat" onclick="filtrar('cargadores')">Cargadores y Cables</button>
-    <button class="btn-cat" onclick="filtrar('computacion')">Computación</button>
-    <button class="btn-cat" onclick="filtrar('electricidad')">Electricidad</button>
-</div>
+        <h2 style="text-align: center; color: #A64B31;">Nuestro Catálogo</h2>
+        <div class="botones-categoria">
+            <button class="btn-cat activo" onclick="filtrar('todos')">Todos</button>
+            <button class="btn-cat" onclick="filtrar('auriculares')">Auriculares</button>
+            <button class="btn-cat" onclick="filtrar('cargadores')">Cargadores y Cables</button>
+            <button class="btn-cat" onclick="filtrar('computacion')">Computación</button>
+            <button class="btn-cat" onclick="filtrar('electricidad')">Electricidad</button>
+        </div>
 
-<div class="grilla-productos">
-    <div class="tarjeta-producto item-categoria" data-categoria="auriculares">
-        <div class="etiqueta-descuento">20% OFF</div>
-        <img src="auricular-m25.jpg" alt="Auricular M25">
-        <h3 class="titulo-producto">Auricular M25</h3>
-        <div class="precio-viejo">$15.000</div>
-        <div class="precio-nuevo">$12.000</div>
-        <button class="boton-agregar" onclick="agregarAlCarrito('Auricular M25', 12000)">Comprar</button>
-    </div>
-
-    <div class="tarjeta-producto item-categoria" data-categoria="computacion">
-        <div class="etiqueta-descuento">20% OFF</div>
-        <img src="antena-wifi.jpg" alt="Antena Wifi">
-        <h3 class="titulo-producto">Antena Wifi USB</h3>
-        <div class="precio-viejo">$10.625</div>
-        <div class="precio-nuevo">$8.500</div>
-        <button class="boton-agregar" onclick="agregarAlCarrito('Antena Wifi', 8500)">Comprar</button>
-    </div>
-
-    <div class="tarjeta-producto item-categoria" data-categoria="cargadores">
-        <div class="etiqueta-descuento">20% OFF</div>
-        <img src="cabezal-motorola.jpg" alt="Cabezal Motorola">
-        <h3 class="titulo-producto">Cabezal Motorola</h3>
-        <div class="precio-viejo">$12.500</div>
-        <div class="precio-nuevo">$10.000</div>
-        <button class="boton-agregar" onclick="agregarAlCarrito('Cabezal Motorola', 10000)">Comprar</button>
-    </div>
-
-    <div class="tarjeta-producto item-categoria" data-categoria="cargadores">
-        <div class="etiqueta-descuento">20% OFF</div>
-        <img src="cabezal-iphone.jpg" alt="Cabezal iPhone">
-        <h3 class="titulo-producto">Cabezal iPhone</h3>
-        <div class="precio-viejo">$12.500</div>
-        <div class="precio-nuevo">$10.000</div>
-        <button class="boton-agregar" onclick="agregarAlCarrito('Cabezal iPhone', 10000)">Comprar</button>
-    </div>
-
-    <div class="tarjeta-producto item-categoria" data-categoria="cargadores">
-        <div class="etiqueta-descuento">20% OFF</div>
-        <img src="cable-c-a-c.jpg" alt="Cable C a C">
-        <h3 class="titulo-producto">Cable Tipo C a Tipo C</h3>
-        <div class="precio-viejo">$5.625</div>
-        <div class="precio-nuevo">$4.500</div>
-        <button class="boton-agregar" onclick="agregarAlCarrito('Cable C a C', 4500)">Comprar</button>
-    </div>
-
-    <div class="tarjeta-producto item-categoria" data-categoria="cargadores">
-        <div class="etiqueta-descuento">20% OFF</div>
-        <img src="cable-mallado-l.jpg" alt="Cable Mallado Lightning">
-        <h3 class="titulo-producto">Cable Mallado USB-Lightning</h3>
-        <div class="precio-viejo">$5.000</div>
-        <div class="precio-nuevo">$4.000</div>
-        <button class="boton-agregar" onclick="agregarAlCarrito('Cable USB-Lightning', 4000)">Comprar</button>
-    </div>
-
-    <div class="tarjeta-producto item-categoria" data-categoria="cargadores">
-        <div class="etiqueta-descuento">20% OFF</div>
-        <img src="cable-moto-25w.jpg" alt="Cable USB-C 25W">
-        <h3 class="titulo-producto">Cable Motorola USB-C 25w</h3>
-        <div class="precio-viejo">$5.625</div>
-        <div class="precio-nuevo">$4.500</div>
-        <button class="boton-agregar" onclick="agregarAlCarrito('Cable USB-C 25w', 4500)">Comprar</button>
-    </div>
-
-    <div class="tarjeta-producto item-categoria" data-categoria="cargadores">
-        <div class="etiqueta-descuento">20% OFF</div>
-        <img src="auxiliar.jpg" alt="Cable Auxiliar">
-        <h3 class="titulo-producto">Cable Auxiliar Mallado</h3>
-        <div class="precio-viejo">$4.375</div>
-        <div class="precio-nuevo">$3.500</div>
-        <button class="boton-agregar" onclick="agregarAlCarrito('Cable Auxiliar', 3500)">Comprar</button>
-    </div>
-
-    <div class="tarjeta-producto item-categoria" data-categoria="electricidad">
-        <div class="etiqueta-descuento">10% OFF</div>
-        <img src="cables-trefilcon.jpg" alt="Rollo Unipolar">
-        <h3 class="titulo-producto">Rollo Unipolar 2,5mm x 100m</h3>
-        <div class="precio-viejo">$85.000</div>
-        <div class="precio-nuevo">$76.500</div>
-        <button class="boton-agregar" onclick="agregarAlCarrito('Rollo Unipolar 2,5mm', 76500)">Comprar</button>
-    </div>
-</div>
-        
+        <div class="grilla-productos">
+            <div class="tarjeta-producto item-categoria" data-categoria="auriculares">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="auricular-m25.jpg" alt="Auricular M25">
+                <h3 class="titulo-producto">Auricular M25</h3>
+                <div class="precio-viejo">$15.000</div>
+                <div class="precio-nuevo">$12.000</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Auricular M25', 12000)">Comprar</button>
+            </div>
+            <div class="tarjeta-producto item-categoria" data-categoria="computacion">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="antena-wifi.jpg" alt="Antena Wifi">
+                <h3 class="titulo-producto">Antena Wifi USB</h3>
+                <div class="precio-viejo">$10.625</div>
+                <div class="precio-nuevo">$8.500</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Antena Wifi', 8500)">Comprar</button>
+            </div>
+            <div class="tarjeta-producto item-categoria" data-categoria="electricidad">
+                <div class="etiqueta-descuento">10% OFF</div>
+                <img src="cables-trefilcon.jpg" alt="Rollo Unipolar">
+                <h3 class="titulo-producto">Rollo Unipolar 2,5mm x 100m</h3>
+                <div class="precio-viejo">$85.000</div>
+                <div class="precio-nuevo">$76.500</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Rollo Unipolar 2,5mm', 76500)">Comprar</button>
+            </div>
+        </div>
     </main>
 
     <footer class="pie-pagina">
@@ -211,12 +156,11 @@
     </div>
 
     <script>
-        // FILTRO DE CATEGORÍAS
+        // FILTRO
         function filtrar(categoriaElegida) {
             let botones = document.querySelectorAll('.btn-cat');
             botones.forEach(boton => boton.classList.remove('activo'));
             event.target.classList.add('activo');
-
             let productos = document.querySelectorAll('.item-categoria');
             productos.forEach(producto => {
                 if (categoriaElegida === 'todos' || producto.getAttribute('data-categoria') === categoriaElegida) {
@@ -227,7 +171,7 @@
             });
         }
 
-        // CARRITO DE COMPRAS
+        // CARRITO
         let carrito = []; 
         let total = 0;
         const numeroWhatsApp = "5491124019479"; 
@@ -256,12 +200,7 @@
             }
             lista.innerHTML = '';
             carrito.forEach((x, i) => { 
-                lista.innerHTML += `
-                    <li>
-                        <span>✔️ ${x.nombre}</span> 
-                        <span>$${x.precio.toLocaleString('es-AR')}</span>
-                        <button onclick="eliminarDelCarrito(${i})" style="background:none; border:none; color:red; cursor:pointer;">🗑️</button>
-                    </li>`; 
+                lista.innerHTML += `<li><span>✔️ ${x.nombre}</span> <span>$${x.precio.toLocaleString('es-AR')}</span><button onclick="eliminarDelCarrito(${i})" style="background:none; border:none; color:red; cursor:pointer;">🗑️</button></li>`; 
             });
             document.getElementById('total-carrito').innerText = total.toLocaleString('es-AR');
         }
@@ -276,28 +215,20 @@
                           `%0A%0A*Total: $${total.toLocaleString('es-AR')}*%0A%0A¿Me pasás los datos para pagar?`;
             window.open(`https://wa.me/${numeroWhatsApp}?text=${mensaje}`, '_blank');
         }
-        // =========================================
-     // Motor del Carrusel de Destacados
-function autoScrollDestacados() {
-    const contenedor = document.querySelector('.carrusel-destacados');
-    if (!contenedor) return;
 
-    let avance = 300; // Cuánto se mueve cada vez
-    
-    setInterval(() => {
-        // Si llegó al final, vuelve al principio suavemente
-        if (contenedor.scrollLeft + contenedor.clientWidth >= contenedor.scrollWidth - 10) {
-            contenedor.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-            // Si no, sigue avanzando
-            contenedor.scrollBy({ left: avance, behavior: 'smooth' });
+        // AUTO-SCROLL DESTACADOS
+        function autoScrollDestacados() {
+            const contenedor = document.querySelector('.carrusel-destacados');
+            if (!contenedor) return;
+            setInterval(() => {
+                if (contenedor.scrollLeft + contenedor.clientWidth >= contenedor.scrollWidth - 10) {
+                    contenedor.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    contenedor.scrollBy({ left: 300, behavior: 'smooth' });
+                }
+            }, 4000);
         }
-    }, 4000); // Se mueve cada 4 segundos
-}
-
-// Iniciar cuando cargue la página
-window.onload = autoScrollDestacados;
-        
+        window.onload = autoScrollDestacados;
     </script>
 
     <script type="module">
@@ -339,7 +270,5 @@ window.onload = autoScrollDestacados;
             });
         }
     </script>
-
-</script>
 </body>
 </html>

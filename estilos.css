@@ -11,6 +11,7 @@
 body {
     background-color: #fff8f0; 
     color: #333;
+    overflow-x: hidden; /* Evita que la página baile para los costados */
 }
 
 /* =========================================
@@ -62,8 +63,6 @@ body {
 .header-centro {
     flex: 1; 
     max-width: 700px; 
-    display: flex;
-    justify-content: center;
 }
 
 .caja-busqueda {
@@ -90,7 +89,6 @@ body {
     background-color: #f9f9f9;
     color: #555;
     outline: none;
-    cursor: pointer;
 }
 
 .btn-buscar {
@@ -100,68 +98,26 @@ body {
     border: none;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.btn-buscar:hover {
-    background-color: #d4ac0d;
-}
-
-.header-der {
-    display: flex;
-    align-items: center;
 }
 
 .link-ingresar {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.1rem;
     padding: 8px 18px;
     border: 2px solid white;
     border-radius: 5px;
-    transition: all 0.3s;
 }
 
-.link-ingresar:hover {
-    background-color: white;
-    color: #A64B31;
-}
-
-.nombre-usuario { 
-    font-weight: normal; 
-    color: #e9e7e7; 
-    font-size: 16px; 
-}
-
-.btn-salir { 
-    background-color: #f5f0ed; 
-    border: none; 
-    color: #A64B31; 
-    padding: 8px 16px; 
-    border-radius: 8px; 
-    cursor: pointer; 
-    font-weight: bold; 
-    font-size: 14px;
-    transition: 0.3s; 
-}
-
-.btn-salir:hover { 
-    background-color: #e8dcd8; 
-    color: #8c3f29;
-}
-
-
-
-  /* =========================================
-   CARRUSEL DE PROPAGANDA (LLENANDO LA CALLE)
+/* =========================================
+   CARRUSEL DE PROPAGANDA (GIGANTE)
 ========================================= */
 .carrusel-publicidad {
     background-color: white;
     overflow: hidden; 
-    padding: 15px 0; /* Menos espacio arriba/abajo para que la foto mande */
+    padding: 20px 0;
     border-bottom: 4px solid #993216;
-    width: 100vw;
+    width: 100%;
 }
 
 .carrusel-track {
@@ -172,14 +128,14 @@ body {
 }
 
 .marca {
-    padding: 0 10px; /* Muy poco espacio entre fotos para que parezca una fila continua */
+    padding: 0 15px;
     flex-shrink: 0;
 }
 
 .marca img {
-    height: 300px; /* ¡SUPER TAMAÑO! Esto va a hacer que se vean como carteles */
-    width: auto;   
-    object-fit: cover; /* Cambiamos a cover para que llenen más el espacio si es necesario */
+    height: 350px; /* Tamaño cartel en PC */
+    width: auto; 
+    object-fit: contain;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
@@ -188,32 +144,28 @@ body {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
+
 /* =========================================
    CARRUSEL DE DESTACADOS
 ========================================= */
 .carrusel-destacados {
     display: flex;
     gap: 20px;
-    overflow-x: auto; /* Permite deslizar con el dedo/mouse */
+    overflow-x: auto;
     padding: 20px;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
 }
 
-/* Escondemos la barra de scroll para que se vea más prolijo */
-.carrusel-destacados::-webkit-scrollbar {
-    display: none;
-}
+.carrusel-destacados::-webkit-scrollbar { display: none; }
 
 .carrusel-destacados .tarjeta-producto {
-    flex: 0 0 300px; /* Cada producto tiene un ancho fijo */
+    flex: 0 0 300px;
     scroll-snap-align: center;
 }
 
-
 /* =========================================
-   ESTILOS DE LOS PRODUCTOS GENERALES
+   GRILLA Y TARJETAS
 ========================================= */
 .contenedor-principal {
     max-width: 1200px;
@@ -221,310 +173,97 @@ body {
     padding: 0 20px;
 }
 
-.contenedor-principal h2 {
-    margin-bottom: 25px;
-    color: #A64B31; 
-    font-size: 2rem;
-}
-
-/* =========================================
-   GRILLA DEL CATÁLOGO (PARA QUE ESTÉN JUNTOS)
-========================================= */
 .grilla-productos {
     display: flex;
-    flex-wrap: wrap; /* Esto permite que pasen a la línea de abajo si no entran */
-    justify-content: center; /* Los centra en la pantalla */
-    gap: 25px; /* Espacio prolijo entre cada producto */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
     margin-top: 20px;
 }
 
 .tarjeta-producto {
-    background-color:  #A64B31; 
-    padding: 15px;
-    border-radius: 8px;
+    background-color: #A64B31; 
+    padding: 20px;
+    border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
     text-align: center;
     position: relative;
     transition: transform 0.2s;
-    color: white; 
+    color: white;
+    width: 280px;
 }
 
-.tarjeta-producto:hover {
-    transform: translateY(-5px);
-}
+.tarjeta-producto:hover { transform: translateY(-5px); }
 
 .tarjeta-producto img {
     width: 100%;
-    height: 220px; /* Este es el alto fijo. Podés achicarlo a 180px o 200px si las querés más chicas */
-    object-fit: contain; /* MAGIA: Hace que la foto se vea entera sin deformarse ni cortarse */
+    height: 220px;
+    object-fit: contain;
     border-radius: 8px;
     margin-bottom: 15px;
-    background-color: white; /* Por si la foto es más angosta, rellena con blanco prolijo */
+    background-color: white;
 }
-/* =========================================
-   ESTILOS DE OFERTA IMPACTANTE
-========================================= */
 
-/* El cartelito de descuento (Más grande y llamativo) */
+/* =========================================
+   OFERTAS E IMPACTO
+========================================= */
 .etiqueta-descuento {
     position: absolute;
-    top: -10px; /* Sobresale un poquito de la tarjeta */
+    top: -10px;
     right: -10px;
-    background-color: #f1c40f; /* Amarillo fuerte */
+    background-color: #f1c40f;
     color: #333;
     padding: 10px 15px;
-    font-size: 1.2rem; /* Más grande */
-    font-weight: 900; /* Super negrita */
+    font-size: 1.2rem;
+    font-weight: 900;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     z-index: 10;
-    transform: rotate(5deg); /* Le da un toque dinámico */
+    transform: rotate(5deg);
     border: 2px solid #fff;
 }
 
-/* Precio Viejo (Tachado y discreto) */
 .precio-viejo {
     display: block;
     text-decoration: line-through;
-    color: #ffcccc; /* Un rojo clarito sobre el fondo oscuro */
-    font-size: 1rem;
+    color: #ffcccc;
+    font-size: 1.1rem;
     margin-top: 10px;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
-/* Precio Nuevo (El protagonista) */
 .precio-nuevo {
     display: block;
-    font-size: 2.2rem; /* GIGANTE */
+    font-size: 2.2rem;
     font-weight: bold;
     color: #fff;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     margin-bottom: 10px;
 }
 
-/* Efecto para que la tarjeta resalte que es oferta */
-.tarjeta-producto:hover .etiqueta-descuento {
-    transform: rotate(0deg) scale(1.1);
-    background-color: #fff;
-    color: #A64B31;
-    transition: 0.3s;
-}
-
-.tarjeta-producto h3 {
-    font-size: 1.3rem;
-    margin-bottom: 8px;
-    color: white; 
-}
-
-.precio-tachado {
-    text-decoration: line-through;
-    color: #ffcccc; 
-    font-size: 0.9rem;
-}
-
-.precio-final {
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: white; 
-    margin-bottom: 15px;
-}
-
-.boton-comprar {
-    display: inline-block;
-    background-color: #993216; 
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    font-weight: bold;
-    margin-top: 15px;
-    width: 80%; 
-    transition: 0.3s;
-}
-/* =========================================
-   BOTÓN DE COMPRAR LLAMATIVO
-========================================= */
 .boton-agregar {
-    background: linear-gradient(135deg, #b94f25 0%, #a38110 100%); /* Degradado tipo WhatsApp/Ventas */
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
     color: white;
     border: none;
     padding: 15px;
     width: 100%;
-    border-radius: 50px; /* Bordes bien redondeados, más modernos */
-    font-size: 1.2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
     font-weight: 900;
-    text-transform: uppercase; /* Todo en mayúsculas */
-    letter-spacing: 1px;
+    text-transform: uppercase;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Sombra para que parezca que sobresale */
-    transition: all 0.3s ease; /* Para que los cambios sean suaves */
-    margin-top: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 }
 
-/* EFECTO CUANDO PASÁS EL MOUSE */
-.boton-agregar:hover {
-    transform: translateY(-3px); /* El botón sube un poquito */
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); /* Brillo verde */
-    filter: brightness(1.1);
-}
+.boton-agregar:hover { filter: brightness(1.1); transform: scale(1.02); }
 
-/* EFECTO CUANDO LO TOCÁS (En el celu se nota mucho) */
-.boton-agregar:active {
-    transform: scale(0.95); /* Se encoge un poquito al apretarlo */
-}
-
-/* AGREGAMOS UN ICONO DE CARRITO AL BOTÓN (Opcional pero recomendado) */
-.boton-agregar::before {
-    content: '🛒';
-    font-size: 1.2rem;
-}
-
-.boton-comprar:hover {
-    background-color: #993216; 
- 
-}
+.boton-agregar::before { content: '🛒'; }
 
 /* =========================================
-   ESTILOS DEL PIE DE PÁGINA (FOOTER)
-========================================= */
-.pie-pagina {
-    background-color: #993216; 
-    color: white;
-    padding: 40px 20px 10px 20px;
-    margin-top: 60px; 
-}
-
-.footer-contenido {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap; 
-    gap: 30px;
-    margin-bottom: 30px;
-}
-
-.footer-columna {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.footer-logo {
-    font-family: 'Great Vibes', cursive;
-    font-size: 3rem;
-    margin-bottom: 5px;
-    color: #f1c40f; 
-}
-
-.footer-columna h4 {
-    font-size: 1.3rem;
-    color: #f1c40f;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.redes-sociales {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.link-red {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.3s;
-    display: flex;
-    align-items: center;
-}
-
-.link-red:hover {
-    color: #f1c40f; 
-}
-
-.footer-creditos {
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1); 
-    padding-top: 15px;
-    font-size: 0.85rem;
-    color: #ccc;
-}
-
-/* =========================================
- /* =========================================
-   VERSIÓN CELULAR (RESPONSIVE) - ¡REFORZADO!
-========================================= */
-@media (max-width: 768px) {
-    /* 1. Ajuste del Header para que no se amontone */
-    .encabezado-avanzado {
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    .header-centro {
-        width: 100%;
-        margin: 10px 0;
-    }
-
-    /* 2. Propaganda en el celu (Un poco más chica que en PC pero que se note) */
-    .marca img {
-        height: 250px; /* En celu 250px es un montón, se va a ver súper bien */
-    }
-
-    /* 3. El Carrusel de Destacados (Clave para que no se rompa) */
-    .carrusel-destacados {
-        gap: 10px;
-        padding: 10px;
-    }
-
-    .carrusel-destacados .tarjeta-producto {
-        flex: 0 0 85%; /* La tarjeta ocupa casi todo el ancho del celu */
-        max-width: 85%;
-    }
-
-    /* 4. Las fotos de los productos en el celu */
-    .tarjeta-producto img {
-        height: 250px; /* Para que luzcan los detalles */
-    }
-
-    /* 5. El cartel de OFF en el celu (Lo hacemos más imponente) */
-    .etiqueta-descuento {
-        font-size: 1rem;
-        padding: 8px 12px;
-        top: -5px;
-        right: -5px;
-    }
-
-    .precio-nuevo {
-        font-size: 1.8rem;
-    }
-
-    /* 6. Grilla de catálogo (Uno debajo del otro o de a dos) */
-    .grilla-productos {
-        grid-template-columns: 1fr; /* Uno por fila para que se vea GRANDE */
-        padding: 10px;
-    }
-
-    /* 7. El Carrito Flotante (Que no tape el botón de comprar) */
-    .icono-flotante {
-        bottom: 20px;
-        right: 20px;
-        width: 55px;
-        height: 55px;
-    }
-
-    /* 8. Panel del carrito en celu (Ocupa casi toda la pantalla) */
-    .panel-carrito {
-        width: 85%;
-    }
-} /* <--- FIJATE QUE ESTA LLAVE CIERRA TODO EL BLOQUE */
-    /* =========================================
-   BOTONES DE CATEGORÍAS
+   CATEGORÍAS
 ========================================= */
 .botones-categoria {
     display: flex;
@@ -539,21 +278,17 @@ body {
     border: none;
     padding: 10px 20px;
     border-radius: 20px;
-    cursor: pointer;
     font-weight: bold;
-    color: #555;
-    transition: 0.3s;
+    cursor: pointer;
 }
 
-.btn-cat:hover, .btn-cat.activo {
-    background-color: #A64B31;
-    color: white;
-}
+.btn-cat.activo { background-color: #A64B31; color: white; }
+
 /* =========================================
-   CARRITO FLOTANTE Y PANEL (EL SECRETO PARA QUE FLOTE)
+   CARRITO Y PANEL
 ========================================= */
 .icono-flotante {
-    position: fixed; /* ESTA ES LA PALABRA MÁGICA QUE LO HACE FLOTAR */
+    position: fixed;
     bottom: 30px;
     right: 30px;
     background-color: #A64B31;
@@ -567,7 +302,7 @@ body {
     font-size: 30px;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    z-index: 1000; /* Lo mantiene por encima de las fotos */
+    z-index: 1000;
 }
 
 .contador-carrito {
@@ -588,7 +323,7 @@ body {
 
 .fondo-carrito {
     display: none; 
-    position: fixed; /* Esto hace que la pantalla negra cubra todo */
+    position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
     background-color: rgba(0,0,0,0.6);
     z-index: 1001;
@@ -601,6 +336,42 @@ body {
     height: 100%;
     background-color: white;
     padding: 20px;
-    box-shadow: -4px 0 15px rgba(0,0,0,0.2);
     overflow-y: auto;
 }
+
+/* =========================================
+   VERSIÓN CELULAR (RESPONSIVE)
+========================================= */
+@media (max-width: 768px) {
+    .encabezado-avanzado { flex-direction: column; padding: 15px; }
+    
+    .marca img { height: 280px; } /* Carteles grandes en celu */
+    
+    .carrusel-destacados .tarjeta-producto {
+        flex: 0 0 85%;
+        max-width: 85%;
+    }
+
+    .grilla-productos {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .tarjeta-producto { width: 100%; }
+
+    .precio-nuevo { font-size: 2rem; }
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+.pie-pagina {
+    background-color: #993216; 
+    color: white;
+    padding: 40px 20px;
+    margin-top: 60px; 
+}
+.footer-contenido { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 30px; }
+.footer-logo { font-family: 'Great Vibes', cursive; font-size: 3rem; color: #f1c40f; }
+.link-red { color: white; text-decoration: none; display: block; margin: 10px 0; }
