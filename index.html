@@ -46,16 +46,12 @@
             </form>
         </div>
         <div id="zona-usuario" style="display: flex; align-items: center; gap: 15px;">
-    <a href="ingresar.html" id="btn-ingreso" style="background-color: #A64B31; color: white; padding: 10px 20px; text-decoration: none; border-radius: 8px; font-weight: bold;">Ingresar</a>
-    <div id="menu-usuario" style="display: none; align-items: center; gap: 15px;">
-        <span id="nombre-usuario" style="font-weight: bold; color: #e7e5e5;">Hola, Usuario</span>
-        <button id="btn-salir" style="background-color: transparent; border: 1px solid #A64B31; color: #d3cac8; padding: 8px 15px; border-radius: 8px; cursor: pointer; font-weight: bold;">Salir</button>
-    </div>
-</div>
-
-        <div class="header-der">
-            
-        </div>
+                <a href="ingresar.html" id="btn-ingreso" class="link-ingresar">Ingresar</a>
+                <div id="menu-usuario" style="display: none; align-items: center; gap: 15px;">
+                    <span id="nombre-usuario" class="nombre-usuario" style="color: white;">Hola, Usuario</span>
+                    <button id="btn-salir" class="btn-salir">Salir</button>
+                </div>
+            </div>
 
     </header>
 
@@ -300,101 +296,104 @@
   .boton-whatsapp:hover { background-color: #20b858; }
 </style>
 
-<div class="seccion-destacados">
-  <h2>⚡ Productos Destacados ⚡</h2>
-  
-  <div class="contenedor-productos">
-    <div class="tarjeta-producto">
-      <div class="etiqueta-descuento">20% OFF</div>
-      <img src="CargadorIphonecomple.jpg" alt="Cargador iPhone" class="foto-producto">
-      <h3 class="titulo-producto">Cargador Completo iPhone (25W)</h3>
-      <div class="precio-viejo">$15.000</div>
-      <div class="precio-nuevo">$12.000</div>
-      <button class="boton-agregar" onclick="agregarAlCarrito('Cargador iPhone', 12000)">Agregar al carrito</button>
-    </div>
+<main>
+        <h2 style="text-align: center; color: #A64B31;">🔥 Destacados de la Semana</h2>
+        
+        <div class="carrusel-destacados">
+            <div class="tarjeta-producto">
+                <img src="auriculares-pro.jpg" alt="Auriculares Pro" onerror="this.src='https://via.placeholder.com/250x200?text=Destacado+1'">
+                <h3>Auriculares Pro</h3>
+                <div class="precio-final">$25.000</div>
+                <button class="boton-comprar" onclick="agregarAlCarrito('Auriculares Pro', 25000)">Comprar</button>
+            </div>
+            <div class="tarjeta-producto">
+                <img src="auriculares-pro.jpg" alt="Auriculares Pro" onerror="this.src='https://via.placeholder.com/250x200?text=Destacado+1'">
+                <h3>Auriculares Pro</h3>
+                <div class="precio-final">$25.000</div>
+                <button class="boton-comprar" onclick="agregarAlCarrito('Auriculares Pro', 25000)">Comprar</button>
+            </div>
+            <div class="tarjeta-producto">
+                <img src="auriculares-pro.jpg" alt="Auriculares Pro" onerror="this.src='https://via.placeholder.com/250x200?text=Destacado+1'">
+                <h3>Auriculares Pro</h3>
+                <div class="precio-final">$25.000</div>
+                <button class="boton-comprar" onclick="agregarAlCarrito('Auriculares Pro', 25000)">Comprar</button>
+            </div>
+            </div>
+            <div class="tarjeta-producto">
+                <img src="auriculares-pro.jpg" alt="Auriculares Pro" onerror="this.src='https://via.placeholder.com/250x200?text=Destacado+1'">
+                <h3>Auriculares Pro</h3>
+                <div class="precio-final">$25.000</div>
+                <button class="boton-comprar" onclick="agregarAlCarrito('Auriculares Pro', 25000)">Comprar</button>
+            </div>
+        </div> 
 
-    <div class="tarjeta-producto">
-      <div class="etiqueta-descuento">20% OFF</div>
-      <img src="gamernoga.jpg" alt="Auriculares Noga" class="foto-producto">
-      <h3 class="titulo-producto">Auriculares Noga GAMER 8620</h3>
-      <div class="precio-viejo">$26.500</div>
-      <div class="precio-nuevo">$21.200</div>
-      <button class="boton-agregar" onclick="agregarAlCarrito('Auriculares Noga', 21200)">Agregar al carrito</button>
-    </div>
+        <br><br>
 
-    <div class="tarjeta-producto">
-      <div class="etiqueta-descuento">20% OFF</div>
-      <img src="memorias.jpg" alt="Memoria Kingston" class="foto-producto">
-      <h3 class="titulo-producto">Memoria MicroSD 32GB Kingston</h3>
-      <div class="precio-viejo">$26.900</div>
-      <div class="precio-nuevo">$21.500</div>
-      <button class="boton-agregar" onclick="agregarAlCarrito('Memoria 32GB', 21500)">Agregar al carrito</button>
-    </div>
-  </div>
-</div>
+        <h2 style="color: #A64B31;">Nuestro Catálogo</h2>
+        
+        <div class="botones-categoria">
+            <button class="btn-cat activo" onclick="filtrar('todos')">Todos</button>
+            <button class="btn-cat" onclick="filtrar('cargadores')">Cargadores</button>
+            <button class="btn-cat" onclick="filtrar('auriculares')">Auriculares</button>
+            <button class="btn-cat" onclick="filtrar('cables')">Cables</button>
+        </div>
 
-<div class="icono-flotante" onclick="abrirCarrito()">
-  🛒
-  <div id="contador" class="contador-carrito">0</div>
-</div>
+        <div class="grilla-productos">
+            
+            <div class="tarjeta-producto item-categoria" data-categoria="auriculares">
+                <img src="auriculares-pro.jpg" alt="Auriculares Pro" onerror="this.src='https://via.placeholder.com/250x200?text=Destacado+1'">
+                <h3>Auriculares Pro</h3>
+                <div class="precio-final">$25.000</div>
+                <button class="boton-comprar" onclick="agregarAlCarrito('Auriculares Pro', 25000)">Comprar</button>
+            </div>
+            <div class="tarjeta-producto item-categoria" data-categoria="auriculares">
+                <img src="auriculares-pro.jpg" alt="Auriculares Pro" onerror="this.src='https://via.placeholder.com/250x200?text=Destacado+1'">
+                <h3>Auriculares Pro</h3>
+                <div class="precio-final">$25.000</div>
+                <button class="boton-comprar" onclick="agregarAlCarrito('Auriculares Pro', 25000)">Comprar</button>
+            </div>
+            <div class="tarjeta-producto item-categoria" data-categoria="auriculares">
+                <img src="auriculares-pro.jpg" alt="Auriculares Pro" onerror="this.src='https://via.placeholder.com/250x200?text=Destacado+1'">
+                <h3>Auriculares Pro</h3>
+                <div class="precio-final">$25.000</div>
+                <button class="boton-comprar" onclick="agregarAlCarrito('Auriculares Pro', 25000)">Comprar</button>
+            </div>
+            <div class="tarjeta-producto item-categoria" data-categoria="auriculares">
+                <img src="auriculares-pro.jpg" alt="Auriculares Pro" onerror="this.src='https://via.placeholder.com/250x200?text=Destacado+1'">
+                <h3>Auriculares Pro</h3>
+                <div class="precio-final">$25.000</div>
+                <button class="boton-comprar" onclick="agregarAlCarrito('Auriculares Pro', 25000)">Comprar</button>
+            </div>
+            <div class="tarjeta-producto item-categoria" data-categoria="auriculares">
+                <img src="auriculares-pro.jpg" alt="Auriculares Pro" onerror="this.src='https://via.placeholder.com/250x200?text=Destacado+1'">
+                <h3>Auriculares Pro</h3>
+                <div class="precio-final">$25.000</div>
+                <button class="boton-comprar" onclick="agregarAlCarrito('Auriculares Pro', 25000)">Comprar</button>
+            </div>
 
-<div id="ventana-carrito" class="fondo-carrito">
-  <div class="panel-carrito">
-    <button class="cerrar-carrito" onclick="cerrarCarrito()">✖ Cerrar</button>
-    
-    <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
-      <img src="logo-la-ronda.jpg" alt="Logo Feria La Ronda" style="max-width: 150px; border-radius: 8px;">
-    </div>
-    
-    <h3 style="text-align: center;">Tu Pedido</h3>
-    <ul id="lista-carrito" class="lista-carrito">
-      <li>El carrito está vacío.</li>
-    </ul>
-    <h4>Total: $<span id="total-carrito">0</span></h4>
-    <button class="boton-whatsapp" onclick="enviarPedido()">Pedir por WhatsApp</button>
-  </div>
-</div>
+        </div>
+    </main>
 
-<script>
-  let carrito = [];
-  let total = 0;
+    <script>
+        function filtrar(categoriaElegida) {
+            // 1. Le sacamos el color activo a todos los botones y se lo ponemos al que tocaste
+            let botones = document.querySelectorAll('.btn-cat');
+            botones.forEach(boton => boton.classList.remove('activo'));
+            event.target.classList.add('activo');
 
-  function agregarAlCarrito(nombreProducto, precioProducto) {
-    carrito.push({ nombre: nombreProducto, precio: precioProducto });
-    total += precioProducto;
-    document.getElementById('contador').innerText = carrito.length;
-    actualizarVistaCarrito();
-    alert('¡Agregaste ' + nombreProducto + ' al carrito!');
-  }
+            // 2. Buscamos todos los productos de la grilla
+            let productos = document.querySelectorAll('.item-categoria');
 
-  function actualizarVistaCarrito() {
-    let listaHTML = document.getElementById('lista-carrito');
-    listaHTML.innerHTML = ''; 
-    carrito.forEach(producto => {
-      listaHTML.innerHTML += `<li>✔️ ${producto.nombre} - $${producto.precio}</li>`;
-    });
-    document.getElementById('total-carrito').innerText = total;
-  }
-
-  function abrirCarrito() { document.getElementById('ventana-carrito').style.display = 'block'; }
-  function cerrarCarrito() { document.getElementById('ventana-carrito').style.display = 'none'; }
-
-  function enviarPedido() {
-    if (carrito.length === 0) {
-      alert('¡Tu carrito está vacío!');
-      return;
-    }
-
-    let numeroWhatsApp = "5491124019479"; // ¡PONÉ EL NÚMERO DE LA RONDA ACÁ!
-    
-    // Mensaje actualizado para La Ronda
-    let mensaje = "¡Hola La Ronda| Mercado & Encuentro! 👋 Quiero encargar esto:%0A%0A";
-    carrito.forEach(producto => { mensaje += `- ${producto.nombre} ($${producto.precio})%0A`; });
-    mensaje += `%0A*Total: $${total}*%0A%0A¿Me pasan los datos para pagar?`;
-
-    window.open(`https://wa.me/${numeroWhatsApp}?text=${mensaje}`, '_blank');
-  }
-
+            // 3. Revisamos uno por uno: si coincide con la categoría lo mostramos, si no, lo ocultamos
+            productos.forEach(producto => {
+                if (categoriaElegida === 'todos' || producto.getAttribute('data-categoria') === categoriaElegida) {
+                    producto.style.display = 'block'; // Mostrar
+                } else {
+                    producto.style.display = 'none';  // Ocultar
+                }
+            });
+        }
+    </script>
  </script>
 
   </div>
@@ -427,18 +426,99 @@
             <p>&copy; 2026 Mercado La Ronda. Todos los derechos reservados.</p>
         </div>
     </footer>
-<script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/";
-        });
-      }
-    });
-  }
-</script>
+<div class="icono-flotante" onclick="abrirCarrito()">
+        🛒 <div id="contador" class="contador-carrito">0</div>
+    </div>
+
+   <div id="ventana-carrito" class="fondo-carrito">
+        <div class="panel-carrito">
+            <button onclick="cerrarCarrito()" style="align-self: flex-end; cursor: pointer; border:none; background:none; color:#A64B31; font-weight:bold; font-size:16px;">✖ Cerrar</button>
+            
+            <div style="text-align: center; margin-top: 10px; margin-bottom: 10px;">
+                <img src="logo-la-ronda.jpg" alt="Logo La Ronda" onerror="this.style.display='none'" style="height: 70px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            </div>
+
+            <h3 style="text-align: center; color: #A64B31; margin-top: 0;">Tu Pedido</h3>
+            
+            <ul id="lista-carrito" class="lista-carrito">
+                <li>El carrito está vacío.</li>
+            </ul>
+            
+            <div style="background:#fdfaf8; padding:15px; margin-bottom:15px; border-left: 5px solid #A64B31;">
+                <strong>Total: $<span id="total-carrito">0</span></strong>
+            </div>
+            
+            <button class="boton-whatsapp" onclick="enviarPedido()">Confirmar por WhatsApp</button>
+
+        </div>
+    </div>
+
+    <script>
+        let carrito = []; 
+        let total = 0;
+        const numeroWhatsApp = "5491124019479"; // PONÉ TU NÚMERO ACÁ
+
+        function agregarAlCarrito(nombre, precio) {
+            carrito.push({ nombre: nombre, precio: precio }); 
+            total += precio;
+            
+            document.getElementById('contador').innerText = carrito.length;
+            
+            let lista = document.getElementById('lista-carrito'); 
+            lista.innerHTML = '';
+            
+            carrito.forEach((x, index) => { 
+                lista.innerHTML += `
+                    <li>
+                        <span>✔️ ${x.nombre}</span> 
+                        <span>$${x.precio.toLocaleString('es-AR')}</span>
+                        <button onclick="eliminarDelCarrito(${index})" style="background:none; border:none; color:red; cursor:pointer;">🗑️</button>
+                    </li>`; 
+            });
+            
+            document.getElementById('total-carrito').innerText = total.toLocaleString('es-AR');
+            
+            // Un avisito visual sutil para que vea que funcionó
+            alert('¡Agregaste ' + nombre + ' al carrito!');
+        }
+
+        function eliminarDelCarrito(index) {
+            total -= carrito[index].precio;
+            carrito.splice(index, 1);
+            
+            document.getElementById('contador').innerText = carrito.length;
+            
+            let lista = document.getElementById('lista-carrito');
+            if (carrito.length === 0) {
+                lista.innerHTML = '<li>El carrito está vacío.</li>';
+                document.getElementById('total-carrito').innerText = '0';
+                return;
+            }
+            
+            lista.innerHTML = '';
+            carrito.forEach((x, i) => { 
+                lista.innerHTML += `
+                    <li>
+                        <span>✔️ ${x.nombre}</span> 
+                        <span>$${x.precio.toLocaleString('es-AR')}</span>
+                        <button onclick="eliminarDelCarrito(${i})" style="background:none; border:none; color:red; cursor:pointer;">🗑️</button>
+                    </li>`; 
+            });
+            document.getElementById('total-carrito').innerText = total.toLocaleString('es-AR');
+        }
+
+        function abrirCarrito() { document.getElementById('ventana-carrito').style.display = 'block'; }
+        function cerrarCarrito() { document.getElementById('ventana-carrito').style.display = 'none'; }
+        
+        function enviarPedido() {
+            if (carrito.length === 0) return alert('¡Tu carrito está vacío!');
+            let mensaje = "¡Hola La Ronda! 👋 Quiero encargar esto:%0A%0A" + 
+                          carrito.map(x => `- ${x.nombre} ($${x.precio.toLocaleString('es-AR')})`).join('%0A') + 
+                          `%0A%0A*Total: $${total.toLocaleString('es-AR')}*%0A%0A¿Me pasás los datos para pagar?`;
+            window.open(`https://wa.me/${numeroWhatsApp}?text=${mensaje}`, '_blank');
+        }
+    </script>
+
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
     import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
@@ -485,5 +565,6 @@
         });
     }
 </script>
+
 </body>
 </html>
