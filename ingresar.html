@@ -78,25 +78,19 @@
             e.preventDefault();
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
-            
             signInWithEmailAndPassword(auth, email, password)
-                .then((userCredential) => {
-                    window.location.href = "index.html"; // Manda a la página principal
-                })
-                .catch((error) => {
-                    alert("Error al ingresar: Verificá tu correo y contraseña.");
-                });
+                .then(() => { window.location.href = "index.html"; })
+                .catch(() => { alert("Error al ingresar. Verificá tus datos."); });
         });
 
         // Ingreso con Google
         document.getElementById('btn-google').addEventListener('click', () => {
             signInWithPopup(auth, provider)
-                .then((result) => {
-                    window.location.href = "index.html"; // Manda a la página principal
-                }).catch((error) => {
-                    alert("Error con Google: " + error.message);
-                });
+                .then(() => { window.location.href = "index.html"; })
+                .catch((error) => { alert("Error con Google: " + error.message); });
         });
     </script>
+</body>
+</html>
 </body>
 </html>
