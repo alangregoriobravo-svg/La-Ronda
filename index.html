@@ -4,15 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Ronda - Tienda Online</title>
-    
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
     <header class="encabezado-avanzado">
-        
         <div class="header-izq">
             <div class="textos-marca">
                 <span class="texto-arriba">BOUTIQUE DE BARRIO</span>
@@ -31,470 +28,245 @@
                     <option value="artesanias">Artesanías</option>
                     <option value="indumentaria">Indumentaria</option>
                     <option value="deco">Deco y Hogar</option>
-                    <option value="Perfumeria">Perfumes y Fragancias</option>
-                    <option value="indumentaria">Computación</option>
-                    <option value="indumentaria">Calzados</option>
-                    <option value="indumentaria">Mundo Otaku</option>
-                    <option value="Computacion">FIT</option>
-                    <option value="Cargadores">Cargadores y Cables</option>
-                    <option value="Electricidad">Electricidad</option>
-                    <option value="Ropa de Bebe">Frutas y Verduras</option>
-                    <option value="Zapatillas">Blanquería</option>
-
                 </select>
                 <button type="button" class="btn-buscar">Buscar</button>
             </form>
         </div>
+        
         <div id="zona-usuario" style="display: flex; align-items: center; gap: 15px;">
-                <a href="ingresar.html" id="btn-ingreso" class="link-ingresar">Ingresar</a>
-                <div id="menu-usuario" style="display: none; align-items: center; gap: 15px;">
-                    <span id="nombre-usuario" class="nombre-usuario" style="color: white;">Hola, Usuario</span>
-                    <button id="btn-salir" class="btn-salir">Salir</button>
-                </div>
+            <a href="ingresar.html" id="btn-ingreso" class="link-ingresar">Ingresar</a>
+            <div id="menu-usuario" style="display: none; align-items: center; gap: 15px;">
+                <span id="nombre-usuario" class="nombre-usuario" style="color: white;">Hola, Usuario</span>
+                <button id="btn-salir" class="btn-salir">Salir</button>
             </div>
-
+        </div>
     </header>
 
     <section class="carrusel-publicidad">
         <div class="carrusel-track">
-            
-            <div class="marca">
-                <a href="https://www.instagram.com/paluney.electrica" target="_blank">
-                    <img src="paluney.jpg" alt="Paluney Eléctrica">
-                </a>
-            </div>
-            <div class="marca">
-                <a href="https://www.instagram.com/la.boutique.de.paloma" target="_blank">
-                    <img src="paloma.jpg" alt="La Boutique de Paloma">
-                </a>
-            </div>
-            <div class="marca">
-                <img src="https://via.placeholder.com/380x140?text=Tu+Marca+Aca" alt="Espacio Disponible">
-            </div>
-            <div class="marca">
-                <img src="https://via.placeholder.com/380x140?text=Tu+Marca+Aca" alt="Espacio Disponible">
-            </div>
-            <div class="marca">
-                <img src="https://via.placeholder.com/380x140?text=Tu+Marca+Aca" alt="Espacio Disponible">
-            </div>
-
-            <div class="marca">
-                <a href="https://www.instagram.com/paluney.electrica" target="_blank">
-                    <img src="paluney.jpg" alt="Paluney Eléctrica">
-                </a>
-            </div>
-            <div class="marca">
-                <a href="https://www.instagram.com/la.boutique.de.paloma" target="_blank">
-                    <img src="paloma.jpg" alt="La Boutique de Paloma">
-                </a>
-            </div>
-            <div class="marca">
-                <img src="https://via.placeholder.com/380x140?text=Tu+Marca+Aca" alt="Espacio Disponible">
-            </div>
-            <div class="marca">
-                <img src="https://via.placeholder.com/380x140?text=Tu+Marca+Aca" alt="Espacio Disponible">
-            </div>
-            <div class="marca">
-                <img src="https://via.placeholder.com/380x140?text=Tu+Marca+Aca" alt="Espacio Disponible">
-            </div>
-
-        </div>
+            <div class="marca"><a href="https://www.instagram.com/paluney.electrica" target="_blank"><img src="paluney.jpg" alt="Paluney Eléctrica"></a></div>
+            <div class="marca"><a href="https://www.instagram.com/la.boutique.de.paloma" target="_blank"><img src="paloma.jpg" alt="La Boutique de Paloma"></a></div>
+            <div class="marca"><img src="https://via.placeholder.com/380x140?text=Tu+Marca+Aca" alt="Espacio Disponible"></div>
+             <div class="marca"><a href="https://www.instagram.com/paluney.electrica" target="_blank"><img src="paluney.jpg" alt="Paluney Eléctrica"></a></div>
+            <div class="marca"><a href="https://www.instagram.com/la.boutique.de.paloma" target="_blank"><img src="paloma.jpg" alt="La Boutique de Paloma"></a></div>
+            <div class="marca"><img src="https://via.placeholder.com/380x140?text=Tu+Marca+Aca" alt="Espacio Disponible"></div>
+        
+           </div>
     </section>
 
-    <main class="contenedor-principal">
-       <style>
-  .seccion-destacados {
-    text-align: center;
-    font-family: Arial, sans-serif;
-    padding: 20px;
-  }
-  .contenedor-productos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-  }
-  .tarjeta-producto {
-    width: 280px;
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    padding: 15px;
-    background-color: #fff;
-    position: relative;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-  .foto-producto {
-    width: 100%;
-    height: 250px;
-    object-fit: contain;
-    border-radius: 8px;
-    margin-bottom: 15px;
-  }
-  .etiqueta-descuento {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #e74c3c;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 14px;
-  }
-  .titulo-producto {
-    font-size: 16px;
-    color: #333;
-    margin: 10px 0;
-    height: 40px;
-  }
-  .precio-viejo {
-    text-decoration: line-through;
-    color: #999;
-    font-size: 14px;
-  }
-  .precio-nuevo {
-    font-size: 22px;
-    color: #2ecc71;
-    font-weight: bold;
-    margin-top: 5px;
-  }
-  /* Botón de los productos */
-  .boton-agregar {
-    background-color: #009ee3;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 6px;
-    font-weight: bold;
-    margin-top: 15px;
-    width: 100%;
-    cursor: pointer;
-    font-size: 16px;
-    transition: 0.3s;
-  }
-  .boton-agregar:hover {
-    background-color: #007ebd;
-  }
-  /* Estilos del Carrito */
-  .seccion-carrito {
-    margin-top: 50px;
-    padding: 20px;
-    border: 2px dashed #009ee3;
-    border-radius: 12px;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #f9f9f9;
-  }
-  .lista-carrito {
-    list-style: none;
-    padding: 0;
-    text-align: left;
-    margin-bottom: 15px;
-  }
-  .lista-carrito li {
-    border-bottom: 1px solid #ddd;
-    padding: 5px 0;
-  }
-  .boton-whatsapp {
-    background-color: #25D366;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 6px;
-    font-weight: bold;
-    font-size: 16px;
-    cursor: pointer;
-    width: 100%;
-    margin-top: 10px;
-  }
-  .boton-whatsapp:hover {
-    background-color: #20b858;
-  }
-</style>
-
-<div class="seccion-destacados">
- <style>
-  /* Estilos de los productos (igual que antes) */
-  .seccion-destacados { text-align: center; font-family: Arial, sans-serif; padding: 20px; }
-  .contenedor-productos { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px; }
-  .tarjeta-producto { width: 280px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background-color: #fff; position: relative; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-  .foto-producto { width: 100%; height: 250px; object-fit: contain; border-radius: 8px; margin-bottom: 15px; }
-  .etiqueta-descuento { position: absolute; top: 10px; right: 10px; background-color: #e74c3c; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 14px; }
-  .titulo-producto { font-size: 16px; color: #333; margin: 10px 0; height: 40px; }
-  .precio-viejo { text-decoration: line-through; color: #999; font-size: 14px; }
-  .precio-nuevo { font-size: 22px; color: #2ecc71; font-weight: bold; margin-top: 5px; }
-  .boton-agregar { background-color: #009ee3; color: white; border: none; padding: 10px; border-radius: 6px; font-weight: bold; margin-top: 15px; width: 100%; cursor: pointer; font-size: 16px; transition: 0.3s; }
-  .boton-agregar:hover { background-color: #007ebd; }
-
-  /* NUEVO: ESTILOS DEL ÍCONO FLOTANTE */
-  .icono-flotante {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #333;
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    z-index: 1000;
-  }
-  .contador-carrito {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: #e74c3c;
-    color: white;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    font-size: 14px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  /* NUEVO: PANEL DEL CARRITO (Oculto por defecto) */
-  .fondo-carrito {
-    display: none; /* Arranca oculto */
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.6);
-    z-index: 1001;
-  }
-  .panel-carrito {
-    position: absolute;
-    top: 0; right: 0; 
-    width: 320px; 
-    height: 100%;
-    background-color: white;
-    padding: 20px;
-    box-shadow: -4px 0 15px rgba(0,0,0,0.2);
-    overflow-y: auto;
-    font-family: Arial, sans-serif;
-  }
-  .cerrar-carrito {
-    color: red;
-    float: right;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    border: none;
-    background: none;
-  }
-  .lista-carrito { list-style: none; padding: 0; text-align: left; margin-bottom: 15px; }
-  .lista-carrito li { border-bottom: 1px solid #eee; padding: 10px 0; font-size: 14px;}
-  .boton-whatsapp { background-color: #25D366; color: white; border: none; padding: 12px 20px; border-radius: 6px; font-weight: bold; font-size: 16px; cursor: pointer; width: 100%; margin-top: 15px; }
-  .boton-whatsapp:hover { background-color: #20b858; }
-</style>
-
-<main>
-        <h2 style="text-align: center; color: #A64B31;">🔥 Destacados de la Semana</h2>
+    <h2 style="text-align: center; color: #A64B31;">🔥 Destacados de la Semana</h2>
         
         <div class="carrusel-destacados">
             <div class="tarjeta-producto">
-                <img src="auriculares-pro.jpg" alt="Auriculares Pro" onerror="this.src='https://via.placeholder.com/250x200?text=Destacado+1'">
-                <h3>Auriculares Pro</h3>
-                <div class="precio-final">$25.000</div>
-                <button class="boton-comprar" onclick="agregarAlCarrito('Auriculares Pro', 25000)">Comprar</button>
+                <div class="etiqueta-descuento">10% OFF</div>
+                <img src="CablesTrefilcon2,5mm.jpg" alt="Rollo Unipolar 2,5mm" onerror="this.src='https://via.placeholder.com/250x200?text=Foto'">
+                <h3 class="titulo-producto">Rollo Unipolar 2,5mm x 100m</h3>
+                <div class="precio-viejo">$85.000</div>
+                <div class="precio-nuevo">$76.500</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Rollo Unipolar 2,5mm', 85000)">Comprar</button>
             </div>
+            
             <div class="tarjeta-producto">
-                <img src="auriculares-pro.jpg" alt="Auriculares Pro" onerror="this.src='https://via.placeholder.com/250x200?text=Destacado+1'">
-                <h3>Auriculares Pro</h3>
-                <div class="precio-final">$25.000</div>
-                <button class="boton-comprar" onclick="agregarAlCarrito('Auriculares Pro', 25000)">Comprar</button>
-            </div>
-            <div class="tarjeta-producto">
-                <img src="auriculares-pro.jpg" alt="Auriculares Pro" onerror="this.src='https://via.placeholder.com/250x200?text=Destacado+1'">
-                <h3>Auriculares Pro</h3>
-                <div class="precio-final">$25.000</div>
-                <button class="boton-comprar" onclick="agregarAlCarrito('Auriculares Pro', 25000)">Comprar</button>
-            </div>
-            </div>
-            <div class="tarjeta-producto">
-                <img src="auriculares-pro.jpg" alt="Auriculares Pro" onerror="this.src='https://via.placeholder.com/250x200?text=Destacado+1'">
-                <h3>Auriculares Pro</h3>
-                <div class="precio-final">$25.000</div>
-                <button class="boton-comprar" onclick="agregarAlCarrito('Auriculares Pro', 25000)">Comprar</button>
+                <div class="etiqueta-descuento">15% OFF</div>
+                <img src="AuricularJBL.jpg" alt="Auricular JBL" onerror="this.src='https://via.placeholder.com/250x200?text=Foto'">
+                <h3 class="titulo-producto">Auricular JBL</h3>
+                <div class="precio-viejo">$25.000</div>
+                <div class="precio-nuevo">$21.250</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Auricular JBL', 25000)">Comprar</button>
             </div>
         </div> 
 
         <br><br>
 
-        <h2 style="color: #A64B31;">Nuestro Catálogo</h2>
+        <h2 style="text-align: center; color: #A64B31;">Nuestro Catálogo</h2>
         
         <div class="botones-categoria">
             <button class="btn-cat activo" onclick="filtrar('todos')">Todos</button>
-            <button class="btn-cat" onclick="filtrar('cargadores')">Cargadores</button>
             <button class="btn-cat" onclick="filtrar('auriculares')">Auriculares</button>
-            <button class="btn-cat" onclick="filtrar('cables')">Cables</button>
+            <button class="btn-cat" onclick="filtrar('cargadores')">Cargadores y Cables</button>
+            <button class="btn-cat" onclick="filtrar('computacion')">Computación</button>
+            <button class="btn-cat" onclick="filtrar('electricidad')">Electricidad</button>
         </div>
 
         <div class="grilla-productos">
             
             <div class="tarjeta-producto item-categoria" data-categoria="auriculares">
-                <img src="auriculares-pro.jpg" alt="Auriculares Pro" onerror="this.src='https://via.placeholder.com/250x200?text=Destacado+1'">
-                <h3>Auriculares Pro</h3>
-                <div class="precio-final">$25.000</div>
-                <button class="boton-comprar" onclick="agregarAlCarrito('Auriculares Pro', 25000)">Comprar</button>
-            </div>
-            <div class="tarjeta-producto item-categoria" data-categoria="auriculares">
-                <img src="auriculares-pro.jpg" alt="Auriculares Pro" onerror="this.src='https://via.placeholder.com/250x200?text=Destacado+1'">
-                <h3>Auriculares Pro</h3>
-                <div class="precio-final">$25.000</div>
-                <button class="boton-comprar" onclick="agregarAlCarrito('Auriculares Pro', 25000)">Comprar</button>
-            </div>
-            <div class="tarjeta-producto item-categoria" data-categoria="auriculares">
-                <img src="auriculares-pro.jpg" alt="Auriculares Pro" onerror="this.src='https://via.placeholder.com/250x200?text=Destacado+1'">
-                <h3>Auriculares Pro</h3>
-                <div class="precio-final">$25.000</div>
-                <button class="boton-comprar" onclick="agregarAlCarrito('Auriculares Pro', 25000)">Comprar</button>
-            </div>
-            <div class="tarjeta-producto item-categoria" data-categoria="auriculares">
-                <img src="auriculares-pro.jpg" alt="Auriculares Pro" onerror="this.src='https://via.placeholder.com/250x200?text=Destacado+1'">
-                <h3>Auriculares Pro</h3>
-                <div class="precio-final">$25.000</div>
-                <button class="boton-comprar" onclick="agregarAlCarrito('Auriculares Pro', 25000)">Comprar</button>
-            </div>
-            <div class="tarjeta-producto item-categoria" data-categoria="auriculares">
-                <img src="auriculares-pro.jpg" alt="Auriculares Pro" onerror="this.src='https://via.placeholder.com/250x200?text=Destacado+1'">
-                <h3>Auriculares Pro</h3>
-                <div class="precio-final">$25.000</div>
-                <button class="boton-comprar" onclick="agregarAlCarrito('Auriculares Pro', 25000)">Comprar</button>
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="AuricularM25.jpg" alt="Auricular M25" onerror="this.src='https: //via.placeholder.com/250x200?text=Foto'">
+                <h3 class="titulo-producto">Auricular M25</h3>
+                <div class="precio-viejo">$15.000</div>
+                <div class="precio-nuevo">$12.000</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Auricular M25', 12000)">Comprar</button>
             </div>
 
-        </div>
-    </main>
+            <div class="tarjeta-producto item-categoria" data-categoria="computacion">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="Antenawifi.jpg" alt="Antena Wifi" onerror="this.src='https: //via.placeholder.com/250x200?text=Foto'">
+                <h3 class="titulo-producto">Antena Wifi USB</h3>
+                <div class="precio-viejo">$10.625</div>
+                <div class="precio-nuevo">$8.500</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Antena Wifi', 8500)">Comprar</button>
+            </div>
 
-    <script>
-        function filtrar(categoriaElegida) {
-            // 1. Le sacamos el color activo a todos los botones y se lo ponemos al que tocaste
-            let botones = document.querySelectorAll('.btn-cat');
-            botones.forEach(boton => boton.classList.remove('activo'));
-            event.target.classList.add('activo');
+            <div class="tarjeta-producto item-categoria" data-categoria="cargadores">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="Cabezalcargador.jpg" alt="Cabezal Motorola" onerror="this.src='https://via.placeholder.com/250x200?text=Foto'">
+                <h3 class="titulo-producto">Cabezal Motorola</h3>
+                <div class="precio-viejo">$12.500</div>
+                <div class="precio-nuevo">$10.000</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Cabezal Motorola', 10000)">Comprar</button>
+            </div>
 
-            // 2. Buscamos todos los productos de la grilla
-            let productos = document.querySelectorAll('.item-categoria');
+            <div class="tarjeta-producto item-categoria" data-categoria="cargadores">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="CabezalIphone.jpg" alt="Cabezal iPhone" onerror="this.src='https://via.placeholder.com/250x200?text=Foto'">
+                <h3 class="titulo-producto">Cabezal iPhone</h3>
+                <div class="precio-viejo">$12.500</div>
+                <div class="precio-nuevo">$10.000</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Cabezal iPhone', 10000)">Comprar</button>
+            </div>
 
-            // 3. Revisamos uno por uno: si coincide con la categoría lo mostramos, si no, lo ocultamos
-            productos.forEach(producto => {
-                if (categoriaElegida === 'todos' || producto.getAttribute('data-categoria') === categoriaElegida) {
-                    producto.style.display = 'block'; // Mostrar
-                } else {
-                    producto.style.display = 'none';  // Ocultar
-                }
-            });
-        }
-    </script>
- </script>
+            <div class="tarjeta-producto item-categoria" data-categoria="cargadores">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="CABLEcAC.jpg" alt="Cable C a C" onerror="this.src='https://via.placeholder.com/250x200?text=Foto'">
+                <h3 class="titulo-producto">Cable Tipo C a Tipo C</h3>
+                <div class="precio-viejo">$5.625</div>
+                <div class="precio-nuevo">$4.500</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Cable C a C', 4500)">Comprar</button>
+            </div>
 
-  </div>
-</div>
-    </main>
+            <div class="tarjeta-producto item-categoria" data-categoria="cargadores">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="CablemalladoUSB-L.jpg" alt="Cable Mallado Lightning" onerror="this.src='https://via.placeholder.com/250x200?text=Foto'">
+                <h3 class="titulo-producto">Cable Mallado USB-Lightning</h3>
+                <div class="precio-viejo">$5.000</div>
+                <div class="precio-nuevo">$4.000</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Cable USB-Lightning', 4000)">Comprar</button>
+            </div>
 
-    <footer class="pie-pagina">
-        <div class="footer-contenido">
+            <div class="tarjeta-producto item-categoria" data-categoria="cargadores">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="Cableusb-c25w.jpg" alt="Cable USB-C 25W" onerror="this.src='https://via.placeholder.com/250x200?text=Foto'">
+                <h3 class="titulo-producto">Cable Motorola USB-C 25w</h3>
+                <div class="precio-viejo">$5.625</div>
+                <div class="precio-nuevo">$4.500</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Cable USB-C 25w', 4500)">Comprar</button>
+            </div>
+
+            <div class="tarjeta-producto item-categoria" data-categoria="cargadores">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="aUXILIAR.jpg" alt="Cable Auxiliar" onerror="this.src='https://via.placeholder.com/250x200?text=Foto'">
+                <h3 class="titulo-producto">Cable Auxiliar Mallado</h3>
+                <div class="precio-viejo">$4.375</div>
+                <div class="precio-nuevo">$3.500</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Cable Auxiliar', 3500)">Comprar</button>
+            </div>
+             <div class="tarjeta-producto item-categoria" data-categoria="electricidad">
+                <div class="etiqueta-descuento">10% OFF</div>
+                <img src="CablesTrefilcon2,5mm.jpg" alt="Rollo Unipolar 2,5mm" onerror="this.src='https://via.placeholder.com/250x200?text=Foto'">
+                <h3 class="titulo-producto">Rollo Unipolar 2,5mm x 100m</h3>
+                <div class="precio-viejo">$85.000</div>
+                <div class="precio-nuevo">$76.500</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Rollo Unipolar 2,5mm', 85000)">Comprar</button>
+            </div>
             
-            <div class="footer-columna">
-                <h3 class="footer-logo">La Ronda</h3>
-                <p>Boutique de Barrio.<br>Mercado & Encuentro.</p>
-            </div>
-            
-            <div class="footer-columna">
-                <h4>Contactanos</h4>
-                <div class="redes-sociales">
-                    <a href="https://wa.me/5491124019479" target="_blank" class="link-red">
-                        📱 WhatsApp: 11-2401-9479
-                    </a>
-                    <a href="https://www.instagram.com/Mercado.LaRonda" target="_blank" class="link-red">
-                        📸 Instagram: @Mercado.LaRonda
-                    </a>
-                </div>
+            <div class="tarjeta-producto item-categoria" data-categoria="auriculares">
+                <div class="etiqueta-descuento">15% OFF</div>
+                <img src="AuricularJBL.jpg" alt="Auricular JBL" onerror="this.src='https://via.placeholder.com/250x200?text=Foto'">
+                <h3 class="titulo-producto">Auricular JBL</h3>
+                <div class="precio-viejo">$25.000</div>
+                <div class="precio-nuevo">$21.250</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Auricular JBL', 25000)">Comprar</button>
             </div>
 
         </div>
         
+    </main>
+
+    <footer class="pie-pagina">
+        <div class="footer-contenido">
+            <div class="footer-columna">
+                <h3 class="footer-logo">La Ronda</h3>
+                <p>Boutique de Barrio.<br>Mercado & Encuentro.</p>
+            </div>
+            <div class="footer-columna">
+                <h4>Contactanos</h4>
+                <div class="redes-sociales">
+                    <a href="https://wa.me/5491124019479" target="_blank" class="link-red">📱 WhatsApp: 11-2401-9479</a>
+                    <a href="https://www.instagram.com/Mercado.LaRonda" target="_blank" class="link-red">📸 Instagram: @Mercado.LaRonda</a>
+                </div>
+            </div>
+        </div>
         <div class="footer-creditos">
             <p>&copy; 2026 Mercado La Ronda. Todos los derechos reservados.</p>
         </div>
     </footer>
-<div class="icono-flotante" onclick="abrirCarrito()">
+
+    <div class="icono-flotante" onclick="abrirCarrito()">
         🛒 <div id="contador" class="contador-carrito">0</div>
     </div>
 
-   <div id="ventana-carrito" class="fondo-carrito">
+    <div id="ventana-carrito" class="fondo-carrito">
         <div class="panel-carrito">
-            <button onclick="cerrarCarrito()" style="align-self: flex-end; cursor: pointer; border:none; background:none; color:#A64B31; font-weight:bold; font-size:16px;">✖ Cerrar</button>
-            
-            <div style="text-align: center; margin-top: 10px; margin-bottom: 10px;">
-                <img src="logo-la-ronda.jpg" alt="Logo La Ronda" onerror="this.style.display='none'" style="height: 70px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            <button onclick="cerrarCarrito()" class="cerrar-carrito">✖ Cerrar</button>
+            <div style="text-align: center; margin: 10px 0;">
+                <img src="logo-la-ronda.jpg" alt="Logo" onerror="this.style.display='none'" style="height: 70px; border-radius: 50%;">
             </div>
-
             <h3 style="text-align: center; color: #A64B31; margin-top: 0;">Tu Pedido</h3>
-            
             <ul id="lista-carrito" class="lista-carrito">
                 <li>El carrito está vacío.</li>
             </ul>
-            
             <div style="background:#fdfaf8; padding:15px; margin-bottom:15px; border-left: 5px solid #A64B31;">
                 <strong>Total: $<span id="total-carrito">0</span></strong>
             </div>
-            
             <button class="boton-whatsapp" onclick="enviarPedido()">Confirmar por WhatsApp</button>
-
         </div>
     </div>
 
     <script>
+        // FILTRO DE CATEGORÍAS
+        function filtrar(categoriaElegida) {
+            let botones = document.querySelectorAll('.btn-cat');
+            botones.forEach(boton => boton.classList.remove('activo'));
+            event.target.classList.add('activo');
+
+            let productos = document.querySelectorAll('.item-categoria');
+            productos.forEach(producto => {
+                if (categoriaElegida === 'todos' || producto.getAttribute('data-categoria') === categoriaElegida) {
+                    producto.style.display = 'block';
+                } else {
+                    producto.style.display = 'none';
+                }
+            });
+        }
+
+        // CARRITO DE COMPRAS
         let carrito = []; 
         let total = 0;
-        const numeroWhatsApp = "5491124019479"; // PONÉ TU NÚMERO ACÁ
+        const numeroWhatsApp = "5491124019479"; 
 
         function agregarAlCarrito(nombre, precio) {
             carrito.push({ nombre: nombre, precio: precio }); 
             total += precio;
-            
             document.getElementById('contador').innerText = carrito.length;
-            
-            let lista = document.getElementById('lista-carrito'); 
-            lista.innerHTML = '';
-            
-            carrito.forEach((x, index) => { 
-                lista.innerHTML += `
-                    <li>
-                        <span>✔️ ${x.nombre}</span> 
-                        <span>$${x.precio.toLocaleString('es-AR')}</span>
-                        <button onclick="eliminarDelCarrito(${index})" style="background:none; border:none; color:red; cursor:pointer;">🗑️</button>
-                    </li>`; 
-            });
-            
-            document.getElementById('total-carrito').innerText = total.toLocaleString('es-AR');
-            
-            // Un avisito visual sutil para que vea que funcionó
+            actualizarListaCarrito();
             alert('¡Agregaste ' + nombre + ' al carrito!');
         }
 
         function eliminarDelCarrito(index) {
             total -= carrito[index].precio;
             carrito.splice(index, 1);
-            
             document.getElementById('contador').innerText = carrito.length;
-            
+            actualizarListaCarrito();
+        }
+
+        function actualizarListaCarrito() {
             let lista = document.getElementById('lista-carrito');
             if (carrito.length === 0) {
                 lista.innerHTML = '<li>El carrito está vacío.</li>';
                 document.getElementById('total-carrito').innerText = '0';
                 return;
             }
-            
             lista.innerHTML = '';
             carrito.forEach((x, i) => { 
                 lista.innerHTML += `
@@ -517,54 +289,70 @@
                           `%0A%0A*Total: $${total.toLocaleString('es-AR')}*%0A%0A¿Me pasás los datos para pagar?`;
             window.open(`https://wa.me/${numeroWhatsApp}?text=${mensaje}`, '_blank');
         }
+        // =========================================
+     // Motor del Carrusel de Destacados
+function autoScrollDestacados() {
+    const contenedor = document.querySelector('.carrusel-destacados');
+    if (!contenedor) return;
+
+    let avance = 300; // Cuánto se mueve cada vez
+    
+    setInterval(() => {
+        // Si llegó al final, vuelve al principio suavemente
+        if (contenedor.scrollLeft + contenedor.clientWidth >= contenedor.scrollWidth - 10) {
+            contenedor.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+            // Si no, sigue avanzando
+            contenedor.scrollBy({ left: avance, behavior: 'smooth' });
+        }
+    }, 4000); // Se mueve cada 4 segundos
+}
+
+// Iniciar cuando cargue la página
+window.onload = autoScrollDestacados;
+        
     </script>
 
-<script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyDTk7jVyz6wacaXF1L-mDdshz0xBMn9WBI",
-      authDomain: "la-ronda-ae0d0.firebaseapp.com",
-      projectId: "la-ronda-ae0d0",
-      storageBucket: "la-ronda-ae0d0.firebasestorage.app",
-      messagingSenderId: "347719632529",
-      appId: "1:347719632529:web:e74f4a02b62b3233122130"
-    };
+        const firebaseConfig = {
+          apiKey: "AIzaSyDTk7jVyz6wacaXF1L-mDdshz0xBMn9WBI",
+          authDomain: "la-ronda-ae0d0.firebaseapp.com",
+          projectId: "la-ronda-ae0d0",
+          storageBucket: "la-ronda-ae0d0.firebasestorage.app",
+          messagingSenderId: "347719632529",
+          appId: "1:347719632529:web:e74f4a02b62b3233122130"
+        };
 
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
 
-    const btnIngreso = document.getElementById('btn-ingreso');
-    const menuUsuario = document.getElementById('menu-usuario');
-    const txtNombreUsuario = document.getElementById('nombre-usuario');
-    const btnSalir = document.getElementById('btn-salir');
+        const btnIngreso = document.getElementById('btn-ingreso');
+        const menuUsuario = document.getElementById('menu-usuario');
+        const txtNombreUsuario = document.getElementById('nombre-usuario');
+        const btnSalir = document.getElementById('btn-salir');
 
-    onAuthStateChanged(auth, (user) => {
-        // Solo hace el cambio si encuentra los botones en el HTML
-        if (user && btnIngreso && menuUsuario) {
-            btnIngreso.style.display = 'none';
-            menuUsuario.style.display = 'flex';
-            
-            let nombreVisible = user.displayName;
-            if (!nombreVisible) {
-                nombreVisible = user.email.split('@')[0];
+        onAuthStateChanged(auth, (user) => {
+            if (user && btnIngreso && menuUsuario) {
+                btnIngreso.style.display = 'none';
+                menuUsuario.style.display = 'flex';
+                let nombreVisible = user.displayName || user.email.split('@')[0];
+                txtNombreUsuario.textContent = "Hola, " + nombreVisible;
+            } else if (!user && btnIngreso && menuUsuario) {
+                btnIngreso.style.display = 'inline-block';
+                menuUsuario.style.display = 'none';
             }
-            txtNombreUsuario.textContent = "Hola, " + nombreVisible;
-        } else if (!user && btnIngreso && menuUsuario) {
-            btnIngreso.style.display = 'inline-block';
-            menuUsuario.style.display = 'none';
-        }
-    });
-
-    if (btnSalir) {
-        btnSalir.addEventListener('click', () => {
-            signOut(auth).then(() => {
-                window.location.reload();
-            });
         });
-    }
-</script>
 
+        if (btnSalir) {
+            btnSalir.addEventListener('click', () => {
+                signOut(auth).then(() => { window.location.reload(); });
+            });
+        }
+    </script>
+
+</script>
 </body>
 </html>

@@ -128,48 +128,92 @@ body {
     color: #A64B31;
 }
 
-/* =========================================
-   CARRUSEL DE PUBLICIDAD
+.nombre-usuario { 
+    font-weight: normal; 
+    color: #e9e7e7; 
+    font-size: 16px; 
+}
+
+.btn-salir { 
+    background-color: #f5f0ed; 
+    border: none; 
+    color: #A64B31; 
+    padding: 8px 16px; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    font-size: 14px;
+    transition: 0.3s; 
+}
+
+.btn-salir:hover { 
+    background-color: #e8dcd8; 
+    color: #8c3f29;
+}
+
+
+
+  /* =========================================
+   CARRUSEL DE PROPAGANDA (LLENANDO LA CALLE)
 ========================================= */
 .carrusel-publicidad {
-    background-color: white; 
-    padding: 15px 0;
+    background-color: white;
     overflow: hidden; 
-    border-bottom: 2px solid #e0e0e0; 
-    white-space: nowrap;
+    padding: 15px 0; /* Menos espacio arriba/abajo para que la foto mande */
+    border-bottom: 4px solid #993216;
+    width: 100vw;
 }
 
 .carrusel-track {
-    display: inline-flex;
-    animation: moverCarrusel 20s linear infinite; 
-}
-
-.carrusel-track:hover {
-    animation-play-state: running; 
+    display: flex;
+    width: max-content; 
+    align-items: center; 
+    animation: scrollPublicidad 25s linear infinite;
 }
 
 .marca {
-    padding: 0 15px; 
+    padding: 0 10px; /* Muy poco espacio entre fotos para que parezca una fila continua */
+    flex-shrink: 0;
 }
 
-/* === Reemplazá el .marca img viejo por ESTE nuevo === */
 .marca img {
-    height: 240px; /* Mantenemos el alto grande que querías */
-    width: auto;   /* ¡IMPORTANTE! El ancho se acomoda solo según la foto */
-    object-fit: contain; /* IMPORTANTE: Asegura que la foto se vea COMPLETA, sin cortarse */
-    border-radius: 6px;
-    border: 1px solid #ddd;
-    background-color: white; /* Por si la foto es chica, que el fondo sea blanco prolijo */
+    height: 300px; /* ¡SUPER TAMAÑO! Esto va a hacer que se vean como carteles */
+    width: auto;   
+    object-fit: cover; /* Cambiamos a cover para que llenen más el espacio si es necesario */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-
-@keyframes moverCarrusel {
+@keyframes scrollPublicidad {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
+/* =========================================
+   CARRUSEL DE DESTACADOS
+========================================= */
+.carrusel-destacados {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* Permite deslizar con el dedo/mouse */
+    padding: 20px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Escondemos la barra de scroll para que se vea más prolijo */
+.carrusel-destacados::-webkit-scrollbar {
+    display: none;
+}
+
+.carrusel-destacados .tarjeta-producto {
+    flex: 0 0 300px; /* Cada producto tiene un ancho fijo */
+    scroll-snap-align: center;
+}
+
 
 /* =========================================
-   ESTILOS DE LOS PRODUCTOS
+   ESTILOS DE LOS PRODUCTOS GENERALES
 ========================================= */
 .contenedor-principal {
     max-width: 1200px;
@@ -183,10 +227,15 @@ body {
     font-size: 2rem;
 }
 
+/* =========================================
+   GRILLA DEL CATÁLOGO (PARA QUE ESTÉN JUNTOS)
+========================================= */
 .grilla-productos {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
-    gap: 25px;
+    display: flex;
+    flex-wrap: wrap; /* Esto permite que pasen a la línea de abajo si no entran */
+    justify-content: center; /* Los centra en la pantalla */
+    gap: 25px; /* Espacio prolijo entre cada producto */
+    margin-top: 20px;
 }
 
 .tarjeta-producto {
@@ -205,22 +254,60 @@ body {
 }
 
 .tarjeta-producto img {
-    max-width: 100%;
-    border-radius: 4px;
+    width: 100%;
+    height: 220px; /* Este es el alto fijo. Podés achicarlo a 180px o 200px si las querés más chicas */
+    object-fit: contain; /* MAGIA: Hace que la foto se vea entera sin deformarse ni cortarse */
+    border-radius: 8px;
     margin-bottom: 15px;
-    background-color: white; 
+    background-color: white; /* Por si la foto es más angosta, rellena con blanco prolijo */
 }
+/* =========================================
+   ESTILOS DE OFERTA IMPACTANTE
+========================================= */
 
+/* El cartelito de descuento (Más grande y llamativo) */
 .etiqueta-descuento {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #f1c40f; 
+    top: -10px; /* Sobresale un poquito de la tarjeta */
+    right: -10px;
+    background-color: #f1c40f; /* Amarillo fuerte */
     color: #333;
-    padding: 5px 10px;
-    font-size: 0.8rem;
+    padding: 10px 15px;
+    font-size: 1.2rem; /* Más grande */
+    font-weight: 900; /* Super negrita */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 10;
+    transform: rotate(5deg); /* Le da un toque dinámico */
+    border: 2px solid #fff;
+}
+
+/* Precio Viejo (Tachado y discreto) */
+.precio-viejo {
+    display: block;
+    text-decoration: line-through;
+    color: #ffcccc; /* Un rojo clarito sobre el fondo oscuro */
+    font-size: 1rem;
+    margin-top: 10px;
+    opacity: 0.7;
+}
+
+/* Precio Nuevo (El protagonista) */
+.precio-nuevo {
+    display: block;
+    font-size: 2.2rem; /* GIGANTE */
     font-weight: bold;
-    border-radius: 4px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 10px;
+}
+
+/* Efecto para que la tarjeta resalte que es oferta */
+.tarjeta-producto:hover .etiqueta-descuento {
+    transform: rotate(0deg) scale(1.1);
+    background-color: #fff;
+    color: #A64B31;
+    transition: 0.3s;
 }
 
 .tarjeta-producto h3 {
@@ -244,19 +331,21 @@ body {
 
 .boton-comprar {
     display: inline-block;
-    background-color: #009ee3; /* Azul estilo Mercado Pago */
+    background-color: #993216; 
     color: white;
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 6px;
     font-weight: bold;
     margin-top: 15px;
-    width: 80%; /* Para que ocupe casi todo el ancho de la tarjeta */
+    width: 80%; 
     transition: 0.3s;
-  }
-  .boton-comprar:hover {
-    background-color: #007ebd; /* Se oscurece un poquito al pasar el mouse */
-  }
+}
+
+.boton-comprar:hover {
+    background-color: #993216; 
+ 
+}
 
 /* =========================================
    ESTILOS DEL PIE DE PÁGINA (FOOTER)
@@ -326,55 +415,151 @@ body {
 }
 
 /* =========================================
-   VERSIÓN CELULAR (RESPONSIVE)
+ /* =========================================
+   VERSIÓN CELULAR (RESPONSIVE) - ¡REFORZADO!
 ========================================= */
-/* === Reemplazá el .marca img viejo ADENTRO DEL @MEDIA por ESTE nuevo === */
-    .marca img {
-        height: 80px; /* Un alto más cómodo para el celu */
-        width: auto;  /* Ancho libre para que no se corte */
-        object-fit: contain; /* Foto completa, sin cortes */
-    }
-
-    .texto-centro {
-        font-size: 2rem;
+@media (max-width: 768px) {
+    /* 1. Ajuste del Header para que no se amontone */
+    .encabezado-avanzado {
+        flex-direction: column;
+        padding: 10px;
     }
 
     .header-centro {
         width: 100%;
-        max-width: 100%;
+        margin: 10px 0;
     }
 
-    .caja-busqueda {
-        flex-direction: column; 
-    }
-
-    .input-busqueda, .input-categoria, .btn-buscar {
-        width: 100%; 
-        text-align: center;
-    }
-
-    .input-categoria {
-        border-left: none;
-        border-top: 1px solid #ddd; 
-    }
-
-    .grilla-productos {
-        grid-template-columns: 1fr; 
-    }
-    
+    /* 2. Propaganda en el celu (Un poco más chica que en PC pero que se note) */
     .marca img {
-        width: 260px;
-        height: 100px;
+        height: 250px; /* En celu 250px es un montón, se va a ver súper bien */
     }
 
-    /* Ajustes del Footer y Login para celulares */
-    .footer-contenido {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+    /* 3. El Carrusel de Destacados (Clave para que no se rompa) */
+    .carrusel-destacados {
+        gap: 10px;
+        padding: 10px;
     }
-    
-    .contenedor-login {
-        flex-direction: column;
+
+    .carrusel-destacados .tarjeta-producto {
+        flex: 0 0 85%; /* La tarjeta ocupa casi todo el ancho del celu */
+        max-width: 85%;
     }
+
+    /* 4. Las fotos de los productos en el celu */
+    .tarjeta-producto img {
+        height: 250px; /* Para que luzcan los detalles */
+    }
+
+    /* 5. El cartel de OFF en el celu (Lo hacemos más imponente) */
+    .etiqueta-descuento {
+        font-size: 1rem;
+        padding: 8px 12px;
+        top: -5px;
+        right: -5px;
+    }
+
+    .precio-nuevo {
+        font-size: 1.8rem;
+    }
+
+    /* 6. Grilla de catálogo (Uno debajo del otro o de a dos) */
+    .grilla-productos {
+        grid-template-columns: 1fr; /* Uno por fila para que se vea GRANDE */
+        padding: 10px;
+    }
+
+    /* 7. El Carrito Flotante (Que no tape el botón de comprar) */
+    .icono-flotante {
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+    }
+
+    /* 8. Panel del carrito en celu (Ocupa casi toda la pantalla) */
+    .panel-carrito {
+        width: 85%;
+    }
+} /* <--- FIJATE QUE ESTA LLAVE CIERRA TODO EL BLOQUE */
+    /* =========================================
+   BOTONES DE CATEGORÍAS
+========================================= */
+.botones-categoria {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.btn-cat {
+    background-color: #eee;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #555;
+    transition: 0.3s;
+}
+
+.btn-cat:hover, .btn-cat.activo {
+    background-color: #A64B31;
+    color: white;
+}
+/* =========================================
+   CARRITO FLOTANTE Y PANEL (EL SECRETO PARA QUE FLOTE)
+========================================= */
+.icono-flotante {
+    position: fixed; /* ESTA ES LA PALABRA MÁGICA QUE LO HACE FLOTAR */
+    bottom: 30px;
+    right: 30px;
+    background-color: #A64B31;
+    color: white;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 1000; /* Lo mantiene por encima de las fotos */
+}
+
+.contador-carrito {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #f1c40f;
+    color: #333;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fondo-carrito {
+    display: none; 
+    position: fixed; /* Esto hace que la pantalla negra cubra todo */
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 1001;
+}
+
+.panel-carrito {
+    position: absolute;
+    top: 0; right: 0; 
+    width: 320px; 
+    height: 100%;
+    background-color: white;
+    padding: 20px;
+    box-shadow: -4px 0 15px rgba(0,0,0,0.2);
+    overflow-y: auto;
 }
