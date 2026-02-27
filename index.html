@@ -439,6 +439,61 @@
     });
   }
 </script>
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
 
+    // Tus llaves de Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyDTk7jVyz6wacaXF1L-mDdshz0xBMn9WBI",
+      authDomain: "la-ronda-ae0d0.firebaseapp.com",
+      projectId: "la-ronda-ae0d0",
+      storageBucket: "la-ronda-ae0d0.firebasestorage.app",
+      messagingSenderId: "347719632529",
+      appId: "1:347719632529:web:e74f4a02b62b3233122130"
+    };
+
+    // Inicializamos Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // Buscamos los botones en el HTML
+    const btnIngreso = document.getElementById('btn-ingreso');
+    const menuUsuario = document.getElementById('menu-usuario');
+    const txtNombreUsuario = document.getElementById('nombre-usuario');
+    const btnSalir = document.getElementById('btn-salir');
+
+    // El "Vigilante" que detecta si alguien inicia sesión
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            // ¡ALGUIEN ENTRÓ! Ocultamos el botón Ingresar y mostramos el menú
+            btnIngreso.style.display = 'none';
+            menuUsuario.style.display = 'flex';
+
+            // Truquito: Si entra con Google tiene nombre, si entra con mail capaz no, así que usamos la primera parte de su correo
+            let nombreVisible = user.displayName;
+            if (!nombreVisible) {
+                nombreVisible = user.email.split('@')[0]; // Agarra lo que está antes del @
+            }
+            
+            txtNombreUsuario.textContent = "Hola, " + nombreVisible;
+
+        } else {
+            // NADIE ESTÁ LOGUEADO
+            btnIngreso.style.display = 'inline-block';
+            menuUsuario.style.display = 'none';
+        }
+    });
+
+    // Función para el botón SALIR
+    btnSalir.addEventListener('click', () => {
+        signOut(auth).then(() => {
+            // Cuando sale con éxito, recargamos la página
+            window.location.reload();
+        }).catch((error) => {
+            console.error("Error al cerrar sesión", error);
+        });
+    });
+</script>
 </body>
 </html>
