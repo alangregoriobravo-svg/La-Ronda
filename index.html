@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Ronda - Tienda Online</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <header class="encabezado-avanzado">
+        
+        <div class="header-izq">
+            <div class="textos-marca">
+                <span class="texto-arriba">BOUTIQUE DE BARRIO</span>
+                <span class="texto-centro">La Ronda</span>
+                <span class="texto-abajo">MERCADO & ENCUENTRO</span>
+            </div>
+            <img src="logo-la-ronda.jpg" alt="Logo La Ronda" class="imagen-logo">
+        </div>
+
+        <div class="header-centro">
+            <form class="caja-busqueda">
+                <input type="text" placeholder="¿Qué estás buscando?" class="input-busqueda">
+                <select class="input-categoria">
+                    <option value="">Buscar en una Categoría</option>
+                    <option value="alimentos">Alimentos y Bebidas</option>
+                    <option value="artesanias">Artesanías</option>
+                    <option value="indumentaria">Indumentaria</option>
+                    <option value="deco">Deco y Hogar</option>
+                    <option value="Perfumeria">Perfumes y Fragancias</option>
+                    <option value="indumentaria">Computación</option>
+                    <option value="indumentaria">Calzados</option>
+                    <option value="indumentaria">Mundo Otaku</option>
+                    <option value="Computacion">FIT</option>
+                    <option value="Cargadores">Cargadores y Cables</option>
+                    <option value="Electricidad">Electricidad</option>
+                    <option value="Ropa de Bebe">Frutas y Verduras</option>
+                    <option value="Zapatillas">Blanquería</option>
+
+                </select>
+                <button type="button" class="btn-buscar">Buscar</button>
+            </form>
+        </div>
+
+        <div class="header-der">
+            <a href="ingresar.html" class="link-ingresar">Ingresar</a>
+        </div>
+
+    </header>
+
+    <section class="carrusel-publicidad">
+        <div class="carrusel-track">
+            
+            <div class="marca">
+                <a href="https://www.instagram.com/paluney.electrica" target="_blank">
+                    <img src="paluney.jpg" alt="Paluney Eléctrica">
+                </a>
+            </div>
+            <div class="marca">
+                <a href="https://www.instagram.com/la.boutique.de.paloma" target="_blank">
+                    <img src="paloma.jpg" alt="La Boutique de Paloma">
+                </a>
+            </div>
+            <div class="marca">
+                <img src="https://via.placeholder.com/380x140?text=Tu+Marca+Aca" alt="Espacio Disponible">
+            </div>
+            <div class="marca">
+                <img src="https://via.placeholder.com/380x140?text=Tu+Marca+Aca" alt="Espacio Disponible">
+            </div>
+            <div class="marca">
+                <img src="https://via.placeholder.com/380x140?text=Tu+Marca+Aca" alt="Espacio Disponible">
+            </div>
+
+            <div class="marca">
+                <a href="https://www.instagram.com/paluney.electrica" target="_blank">
+                    <img src="paluney.jpg" alt="Paluney Eléctrica">
+                </a>
+            </div>
+            <div class="marca">
+                <a href="https://www.instagram.com/la.boutique.de.paloma" target="_blank">
+                    <img src="paloma.jpg" alt="La Boutique de Paloma">
+                </a>
+            </div>
+            <div class="marca">
+                <img src="https://via.placeholder.com/380x140?text=Tu+Marca+Aca" alt="Espacio Disponible">
+            </div>
+            <div class="marca">
+                <img src="https://via.placeholder.com/380x140?text=Tu+Marca+Aca" alt="Espacio Disponible">
+            </div>
+            <div class="marca">
+                <img src="https://via.placeholder.com/380x140?text=Tu+Marca+Aca" alt="Espacio Disponible">
+            </div>
+
+        </div>
+    </section>
+
+    <main class="contenedor-principal">
+       <style>
+  .seccion-destacados {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  .contenedor-productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .tarjeta-producto {
+    width: 280px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 15px;
+    background-color: #fff;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  .foto-producto {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  .etiqueta-descuento {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  .titulo-producto {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+    height: 40px;
+  }
+  .precio-viejo {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 14px;
+  }
+  .precio-nuevo {
+    font-size: 22px;
+    color: #2ecc71;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+  /* Botón de los productos */
+  .boton-agregar {
+    background-color: #009ee3;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-top: 15px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+  .boton-agregar:hover {
+    background-color: #007ebd;
+  }
+  /* Estilos del Carrito */
+  .seccion-carrito {
+    margin-top: 50px;
+    padding: 20px;
+    border: 2px dashed #009ee3;
+    border-radius: 12px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f9f9f9;
+  }
+  .lista-carrito {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-bottom: 15px;
+  }
+  .lista-carrito li {
+    border-bottom: 1px solid #ddd;
+    padding: 5px 0;
+  }
+  .boton-whatsapp {
+    background-color: #25D366;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .boton-whatsapp:hover {
+    background-color: #20b858;
+  }
+</style>
+
+<div class="seccion-destacados">
+ <style>
+  /* Estilos de los productos (igual que antes) */
+  .seccion-destacados { text-align: center; font-family: Arial, sans-serif; padding: 20px; }
+  .contenedor-productos { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px; }
+  .tarjeta-producto { width: 280px; border: 1px solid #e0e0e0; border-radius: 12px; padding: 15px; background-color: #fff; position: relative; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+  .foto-producto { width: 100%; height: 250px; object-fit: contain; border-radius: 8px; margin-bottom: 15px; }
+  .etiqueta-descuento { position: absolute; top: 10px; right: 10px; background-color: #e74c3c; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 14px; }
+  .titulo-producto { font-size: 16px; color: #333; margin: 10px 0; height: 40px; }
+  .precio-viejo { text-decoration: line-through; color: #999; font-size: 14px; }
+  .precio-nuevo { font-size: 22px; color: #2ecc71; font-weight: bold; margin-top: 5px; }
+  .boton-agregar { background-color: #009ee3; color: white; border: none; padding: 10px; border-radius: 6px; font-weight: bold; margin-top: 15px; width: 100%; cursor: pointer; font-size: 16px; transition: 0.3s; }
+  .boton-agregar:hover { background-color: #007ebd; }
+
+  /* NUEVO: ESTILOS DEL ÍCONO FLOTANTE */
+  .icono-flotante {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #333;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+  }
+  .contador-carrito {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* NUEVO: PANEL DEL CARRITO (Oculto por defecto) */
+  .fondo-carrito {
+    display: none; /* Arranca oculto */
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 1001;
+  }
+  .panel-carrito {
+    position: absolute;
+    top: 0; right: 0; 
+    width: 320px; 
+    height: 100%;
+    background-color: white;
+    padding: 20px;
+    box-shadow: -4px 0 15px rgba(0,0,0,0.2);
+    overflow-y: auto;
+    font-family: Arial, sans-serif;
+  }
+  .cerrar-carrito {
+    color: red;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+  .lista-carrito { list-style: none; padding: 0; text-align: left; margin-bottom: 15px; }
+  .lista-carrito li { border-bottom: 1px solid #eee; padding: 10px 0; font-size: 14px;}
+  .boton-whatsapp { background-color: #25D366; color: white; border: none; padding: 12px 20px; border-radius: 6px; font-weight: bold; font-size: 16px; cursor: pointer; width: 100%; margin-top: 15px; }
+  .boton-whatsapp:hover { background-color: #20b858; }
+</style>
+
+<div class="seccion-destacados">
+  <h2>⚡ Productos Destacados ⚡</h2>
+  
+  <div class="contenedor-productos">
+    <div class="tarjeta-producto">
+      <div class="etiqueta-descuento">20% OFF</div>
+      <img src="CargadorIphonecomple.jpg" alt="Cargador iPhone" class="foto-producto">
+      <h3 class="titulo-producto">Cargador Completo iPhone (25W)</h3>
+      <div class="precio-viejo">$15.000</div>
+      <div class="precio-nuevo">$12.000</div>
+      <button class="boton-agregar" onclick="agregarAlCarrito('Cargador iPhone', 12000)">Agregar al carrito</button>
+    </div>
+
+    <div class="tarjeta-producto">
+      <div class="etiqueta-descuento">20% OFF</div>
+      <img src="gamernoga.jpg" alt="Auriculares Noga" class="foto-producto">
+      <h3 class="titulo-producto">Auriculares Noga GAMER 8620</h3>
+      <div class="precio-viejo">$26.500</div>
+      <div class="precio-nuevo">$21.200</div>
+      <button class="boton-agregar" onclick="agregarAlCarrito('Auriculares Noga', 21200)">Agregar al carrito</button>
+    </div>
+
+    <div class="tarjeta-producto">
+      <div class="etiqueta-descuento">20% OFF</div>
+      <img src="memorias.jpg" alt="Memoria Kingston" class="foto-producto">
+      <h3 class="titulo-producto">Memoria MicroSD 32GB Kingston</h3>
+      <div class="precio-viejo">$26.900</div>
+      <div class="precio-nuevo">$21.500</div>
+      <button class="boton-agregar" onclick="agregarAlCarrito('Memoria 32GB', 21500)">Agregar al carrito</button>
+    </div>
+  </div>
+</div>
+
+<div class="icono-flotante" onclick="abrirCarrito()">
+  🛒
+  <div id="contador" class="contador-carrito">0</div>
+</div>
+
+<div id="ventana-carrito" class="fondo-carrito">
+  <div class="panel-carrito">
+    <button class="cerrar-carrito" onclick="cerrarCarrito()">✖ Cerrar</button>
+    
+    <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
+      <img src="logo-la-ronda.jpg" alt="Logo Feria La Ronda" style="max-width: 150px; border-radius: 8px;">
+    </div>
+    
+    <h3 style="text-align: center;">Tu Pedido</h3>
+    <ul id="lista-carrito" class="lista-carrito">
+      <li>El carrito está vacío.</li>
+    </ul>
+    <h4>Total: $<span id="total-carrito">0</span></h4>
+    <button class="boton-whatsapp" onclick="enviarPedido()">Pedir por WhatsApp</button>
+  </div>
+</div>
+
+<script>
+  let carrito = [];
+  let total = 0;
+
+  function agregarAlCarrito(nombreProducto, precioProducto) {
+    carrito.push({ nombre: nombreProducto, precio: precioProducto });
+    total += precioProducto;
+    document.getElementById('contador').innerText = carrito.length;
+    actualizarVistaCarrito();
+    alert('¡Agregaste ' + nombreProducto + ' al carrito!');
+  }
+
+  function actualizarVistaCarrito() {
+    let listaHTML = document.getElementById('lista-carrito');
+    listaHTML.innerHTML = ''; 
+    carrito.forEach(producto => {
+      listaHTML.innerHTML += `<li>✔️ ${producto.nombre} - $${producto.precio}</li>`;
+    });
+    document.getElementById('total-carrito').innerText = total;
+  }
+
+  function abrirCarrito() { document.getElementById('ventana-carrito').style.display = 'block'; }
+  function cerrarCarrito() { document.getElementById('ventana-carrito').style.display = 'none'; }
+
+  function enviarPedido() {
+    if (carrito.length === 0) {
+      alert('¡Tu carrito está vacío!');
+      return;
+    }
+
+    let numeroWhatsApp = "5491124019479"; // ¡PONÉ EL NÚMERO DE LA RONDA ACÁ!
+    
+    // Mensaje actualizado para La Ronda
+    let mensaje = "¡Hola La Ronda| Mercado & Encuentro! 👋 Quiero encargar esto:%0A%0A";
+    carrito.forEach(producto => { mensaje += `- ${producto.nombre} ($${producto.precio})%0A`; });
+    mensaje += `%0A*Total: $${total}*%0A%0A¿Me pasan los datos para pagar?`;
+
+    window.open(`https://wa.me/${numeroWhatsApp}?text=${mensaje}`, '_blank');
+  }
+
+ </script>
+
+  </div>
+</div>
+    </main>
+
+    <footer class="pie-pagina">
+        <div class="footer-contenido">
+            
+            <div class="footer-columna">
+                <h3 class="footer-logo">La Ronda</h3>
+                <p>Boutique de Barrio.<br>Mercado & Encuentro.</p>
+            </div>
+            
+            <div class="footer-columna">
+                <h4>Contactanos</h4>
+                <div class="redes-sociales">
+                    <a href="https://wa.me/5491124019479" target="_blank" class="link-red">
+                        📱 WhatsApp: 11-2401-9479
+                    </a>
+                    <a href="https://www.instagram.com/Mercado.LaRonda" target="_blank" class="link-red">
+                        📸 Instagram: @Mercado.LaRonda
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="footer-creditos">
+            <p>&copy; 2026 Mercado La Ronda. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+<script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/";
+        });
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

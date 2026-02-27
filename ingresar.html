@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingresar - La Ronda|Mercado & Encuentro</title>
+    
+    
+    
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #fdfaf8; display: flex; justify-content: center; align-items: center; height: 100vh; }
+        .tarjeta-login { background-color: #fff; padding: 40px 30px; border-radius: 15px; box-shadow: 0 8px 25px rgba(166, 75, 49, 0.15); max-width: 350px; width: 90%; text-align: center; border-top: 6px solid #A64B31; }
+        .logo-login { max-width: 140px; margin-bottom: 20px; }
+        h2 { color: #333; font-size: 22px; margin-top: 0; margin-bottom: 25px; }
+        .grupo-input { text-align: left; margin-bottom: 20px; }
+        .grupo-input label { display: block; font-size: 14px; color: #666; margin-bottom: 8px; font-weight: bold; }
+        .grupo-input input { width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; box-sizing: border-box; outline: none; transition: 0.3s; }
+        .grupo-input input:focus { border-color: #A64B31; box-shadow: 0 0 5px rgba(166, 75, 49, 0.2); }
+        .boton-principal { background-color: #A64B31; color: white; border: none; padding: 14px; border-radius: 8px; font-weight: bold; font-size: 16px; width: 100%; cursor: pointer; transition: 0.3s; }
+        .boton-principal:hover { opacity: 0.9; }
+        
+        /* --- BOTÓN DE GOOGLE Y SEPARADOR --- */
+        .separador { display: flex; align-items: center; text-align: center; color: #999; margin: 20px 0; font-size: 14px; }
+        .separador::before, .separador::after { content: ''; flex: 1; border-bottom: 1px solid #eee; }
+        .separador:not(:empty)::before { margin-right: 10px; }
+        .separador:not(:empty)::after { margin-left: 10px; }
+        .boton-google { background-color: #fff; color: #555; border: 1px solid #ddd; padding: 12px; border-radius: 8px; font-weight: bold; font-size: 15px; width: 100%; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 10px; transition: 0.3s; }
+        .boton-google:hover { background-color: #f9f9f9; }
+        
+        .links-extra { margin-top: 20px; font-size: 14px; }
+        .links-extra a { color: #A64B31; text-decoration: none; font-weight: bold; }
+        .links-extra a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="tarjeta-login">
+        <a href="index.html"><img src="logo-la-ronda.jpg" alt="Logo La Ronda" class="logo-login"></a>
+        <h2>¡Hola de nuevo!</h2>
+        
+        <form action="index.html">
+            <div class="grupo-input">
+                <label>Correo Electrónico</label>
+                <input type="email" placeholder="ejemplo@correo.com" required>
+            </div>
+            <div class="grupo-input">
+                <label>Contraseña</label>
+                <input type="password" placeholder="********" required>
+            </div>
+            <button type="submit" class="boton-principal">Ingresar</button>
+        </form>
+
+        <div class="separador">O ingresá con</div>
+        
+        <button class="boton-google" type="button" onclick="window.location.href='index.html'">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" style="width: 20px;">
+    Continuar con Google
+        </button>
+
+        <div class="links-extra">
+            <p><a href="recuperar.html">¿Olvidaste tu contraseña?</a></p>
+            <p>¿No tenés cuenta? <a href="registro.html">Registrate acá</a></p>
+        </div>
+    </div>
+</body>
+</html>
