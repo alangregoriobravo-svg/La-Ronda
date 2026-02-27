@@ -339,66 +339,83 @@ body {
     overflow-y: auto;
 }
 
-/* =========================================
-   VERSIÓN CELULAR (RESPONSIVE)
-========================================= */
-@media  (max-width: 768px) {
-    /* ... (tus otros estilos de celu) ... */
 
+  /* =========================================
+   VERSIÓN CELULAR FINAL Y CORREGIDA
+========================================= */
+@media (max-width: 768px) {
+    /* Ajuste total del encabezado */
     .encabezado-avanzado {
-        padding: 10px;
+        flex-direction: column !important;
+        padding: 15px 10px !important;
+        height: auto !important;
     }
 
     .header-izq {
-        margin-bottom: 15px; /* Separa el logo del buscador */
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 15px;
     }
 
+    .textos-marca .texto-centro {
+        font-size: 2rem; /* Achicamos un poco el nombre para que entre */
+    }
+
+    /* Buscador compacto */
     .header-centro {
-        width: 100%; /* Que ocupe todo el ancho del celu */
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 5px;
     }
 
     .caja-busqueda {
-        flex-direction: column; /* Pone el buscador, la categoría y el botón uno abajo del otro */
-        border-radius: 8px;
-        background-color: transparent; /* Para que no se vea una caja blanca gigante */
-        gap: 5px;
+        display: flex !important;
+        flex-direction: column !important; /* Apila los elementos */
+        background-color: transparent !important;
+        gap: 8px !important;
     }
 
-    .input-busqueda, .input-categoria, .btn-buscar {
-        width: 100%; /* Todos ocupan el ancho total */
-        border-radius: 5px !important; /* Les damos forma individual */
-        border: 1px solid #ddd;
-        margin-bottom: 5px;
+    .input-busqueda, 
+    .input-categoria, 
+    .btn-buscar {
+        width: 100% !important;
+        height: 45px !important; /* Altura cómoda para el dedo */
+        border-radius: 8px !important;
+        margin: 0 !important;
+        font-size: 16px !important; /* Evita que el iPhone haga zoom automático */
     }
 
     .input-categoria {
-        border-left: none; /* Quitamos la rayita de división de PC */
+        border-left: 1px solid #ddd !important;
     }
 
-    .btn-buscar {
-        padding: 15px; /* Más fácil de tocar con el dedo */
-    }
-}
-    .encabezado-avanzado { flex-direction: column; padding: 15px; }
-    
-    .marca img { height: 280px; } /* Carteles grandes en celu */
-    
-    .carrusel-destacados .tarjeta-producto {
-        flex: 0 0 85%;
-        max-width: 85%;
+    /* Ajuste de imágenes y grilla */
+    .marca img {
+        height: 200px !important; /* Propaganda un poco más razonable en celu */
     }
 
     .grilla-productos {
-        display: grid;
-        grid-template-columns: 1fr;
+        display: grid !important;
+        grid-template-columns: 1fr !important; /* Un producto por fila bien grande */
+        gap: 20px;
         padding: 10px;
     }
 
-    .tarjeta-producto { width: 100%; }
+    .tarjeta-producto {
+        width: 100% !important;
+        max-width: 350px;
+        margin: 0 auto;
+    }
 
-    .precio-nuevo { font-size: 2rem; }
-
-
+    /* Icono del carrito para que no moleste */
+    .icono-flotante {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
 /* =========================================
    FOOTER
 ========================================= */
