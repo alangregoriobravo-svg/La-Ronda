@@ -341,6 +341,47 @@ body {
     width: 80%; 
     transition: 0.3s;
 }
+/* =========================================
+   BOTÓN DE COMPRAR LLAMATIVO
+========================================= */
+.boton-agregar {
+    background: linear-gradient(135deg, #b94f25 0%, #a38110 100%); /* Degradado tipo WhatsApp/Ventas */
+    color: white;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 50px; /* Bordes bien redondeados, más modernos */
+    font-size: 1.2rem;
+    font-weight: 900;
+    text-transform: uppercase; /* Todo en mayúsculas */
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Sombra para que parezca que sobresale */
+    transition: all 0.3s ease; /* Para que los cambios sean suaves */
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* EFECTO CUANDO PASÁS EL MOUSE */
+.boton-agregar:hover {
+    transform: translateY(-3px); /* El botón sube un poquito */
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); /* Brillo verde */
+    filter: brightness(1.1);
+}
+
+/* EFECTO CUANDO LO TOCÁS (En el celu se nota mucho) */
+.boton-agregar:active {
+    transform: scale(0.95); /* Se encoge un poquito al apretarlo */
+}
+
+/* AGREGAMOS UN ICONO DE CARRITO AL BOTÓN (Opcional pero recomendado) */
+.boton-agregar::before {
+    content: '🛒';
+    font-size: 1.2rem;
+}
 
 .boton-comprar:hover {
     background-color: #993216; 
