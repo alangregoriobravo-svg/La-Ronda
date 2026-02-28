@@ -145,25 +145,39 @@ body {
     100% { transform: translateX(-50%); }
 }
 
+
+
 /* =========================================
-   CARRUSEL DE DESTACADOS
+   CARRUSEL DE DESTACADOS (CONTINUO ESTILO PUBLICIDAD)
 ========================================= */
 .carrusel-destacados {
+    overflow: hidden; /* Oculta lo que queda fuera de la pantalla */
+    width: 100%;
+    padding: 20px 0;
+    position: relative;
+}
+
+.carrusel-track-destacados {
     display: flex;
     gap: 20px;
-    overflow-x: auto;
-    padding: 20px;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
+    width: max-content; 
+    /* 35 segundos para que sea más lento que la publicidad y se puedan leer los precios */
+    animation: scrollDestacados 35s linear infinite; 
+    padding: 0 10px;
 }
 
-.carrusel-destacados::-webkit-scrollbar { display: none; }
-
-.carrusel-destacados .tarjeta-producto {
-    flex: 0 0 300px;
-    scroll-snap-align: center;
+/* ⚠️ ¡EL SECRETO DE VENTAS! ⚠️ 
+Si el cliente apoya el dedo o el mouse, el carrusel frena para que pueda darle a "Comprar" */
+.carrusel-destacados:hover .carrusel-track-destacados,
+.carrusel-destacados:active .carrusel-track-destacados {
+    animation-play-state: paused;
 }
 
+/* La animación continua */
+@keyframes scrollDestacados {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 10px)); }
+}
 /* =========================================
    GRILLA Y TARJETAS
 ========================================= */

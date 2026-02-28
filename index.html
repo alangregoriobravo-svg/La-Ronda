@@ -20,18 +20,22 @@
         </div>
 
         <div class="header-centro">
-            <form class="caja-busqueda">
-                <input type="text" placeholder="¿Qué estás buscando?" class="input-busqueda">
-                <select class="input-categoria">
-                    <option value="">Buscar en una Categoría</option>
-                    <option value="alimentos">Alimentos y Bebidas</option>
-                    <option value="artesanias">Artesanías</option>
-                    <option value="indumentaria">Indumentaria</option>
-                    <option value="deco">Deco y Hogar</option>
-                    <option value="computacion">Computación</option>
-                    <option value="electricidad">Electricidad</option>
-                </select>
-                <button type="button" class="btn-buscar">Buscar</button>
+            <form class="caja-busqueda" onsubmit="event.preventDefault(); buscarProductos();">
+    <input type="text" id="texto-busqueda" placeholder="¿Qué estás buscando?" class="input-busqueda">
+    
+    <select id="categoria-busqueda" class="input-categoria">
+        <option value="todos">Todas las Categorías</option>
+        <option value="auriculares">Auriculares</option>
+        <option value="cargadores">Cargadores y Cables</option>
+        <option value="computacion">Computación</option>
+        <option value="audio">Audio</option>
+        <option value="iluminacion">Iluminación</option>
+        <option value="soportes">Soportes</option>
+        <option value="electricidad">Electricidad</option>
+    </select>
+    
+    <button type="button" class="btn-buscar" onclick="buscarProductos()">Buscar</button>
+</form>
             </form>
         </div>
         
@@ -55,26 +59,98 @@
         </div>
     </section>
 
-    <main class="contenedor-principal">
-        <h2 style="text-align: center; color: #A64B31;">🔥 Destacados de la Semana</h2>
-        <div class="carrusel-destacados">
-            <div class="tarjeta-producto">
-                <div class="etiqueta-descuento">10% OFF</div>
-                <img src="cables-trefilcon.jpg" alt="Rollo Unipolar">
-                <h3 class="titulo-producto">Rollo Unipolar 2,5mm x 100m</h3>
-                <div class="precio-viejo">$85.000</div>
-                <div class="precio-nuevo">$76.500</div>
-                <button class="boton-agregar" onclick="agregarAlCarrito('Rollo Unipolar 2,5mm', 76500)">Comprar</button>
-            </div>
-            <div class="tarjeta-producto">
-                <div class="etiqueta-descuento">15% OFF</div>
-                <img src="auricular-jbl.jpg" alt="Auricular JBL">
-                <h3 class="titulo-producto">Auricular JBL</h3>
-                <div class="precio-viejo">$25.000</div>
-                <div class="precio-nuevo">$21.250</div>
-                <button class="boton-agregar" onclick="agregarAlCarrito('Auricular JBL', 21250)">Comprar</button>
-            </div>
+   <main class="contenedor-principal">
+    <h2 style="text-align: center; color: #A64B31;">🔥 Destacados de la Semana 🔥</h2>
+
+<div class="carrusel-destacados">
+    <div class="carrusel-track-destacados">
+        
+        <div class="tarjeta-producto">
+            <div class="etiqueta-descuento">10% OFF</div>
+            <img src="cables-trefilcon.jpg" alt="Rollo Unipolar">
+            <h3 class="titulo-producto">Rollo Unipolar 2,5mm x 100m</h3>
+            <div class="precio-viejo">$85.000</div>
+            <div class="precio-nuevo">$76.500</div>
+            <button class="boton-agregar" onclick="agregarAlCarrito('Rollo Unipolar 2,5mm', 76500)">Comprar</button>
         </div>
+        <div class="tarjeta-producto">
+            <div class="etiqueta-descuento">15% OFF</div>
+            <img src="auricular-jbl.jpg" alt="Auricular JBL">
+            <h3 class="titulo-producto">Auricular JBL</h3>
+            <div class="precio-viejo">$25.000</div>
+            <div class="precio-nuevo">$21.250</div>
+            <button class="boton-agregar" onclick="agregarAlCarrito('Auricular JBL', 21250)">Comprar</button>
+        </div>
+        <div class="tarjeta-producto"> 
+            <div class="etiqueta-descuento">20% OFF</div>
+            <img src="reflectorsolar100w.jpg" alt="Reflector Solar 100W">
+            <h3 class="titulo-producto">Reflector Solar 100w + Panel</h3>
+            <div class="precio-viejo">$69.000</div>
+            <div class="precio-nuevo">$55.200</div>
+            <button class="boton-agregar" onclick="agregarAlCarrito('Reflector Solar 100w', 55200)">Comprar</button>
+        </div>
+        <div class="tarjeta-producto">
+            <div class="etiqueta-descuento">20% OFF</div>
+            <img src="jostickps4.jpg" alt="Joystick PS4">
+            <h3 class="titulo-producto">Joystick PS4</h3>
+            <div class="precio-viejo">$35.000</div>
+            <div class="precio-nuevo">$28.000</div>
+            <button class="boton-agregar" onclick="agregarAlCarrito('Joystick PS4', 28000)">Comprar</button>
+        </div>
+        <div class="tarjeta-producto">
+            <div class="etiqueta-descuento">20% OFF</div>
+            <img src="reflectorsolar50w.jpg" alt="Reflector Solar 50W">
+            <h3 class="titulo-producto">Reflector Solar 50w + Panel</h3>
+            <div class="precio-viejo">$49.000</div>
+            <div class="precio-nuevo">$39.200</div>
+            <button class="boton-agregar" onclick="agregarAlCarrito('Reflector Solar 50w', 39200)">Comprar</button>
+        </div>
+
+        <div class="tarjeta-producto">
+            <div class="etiqueta-descuento">10% OFF</div>
+            <img src="cables-trefilcon.jpg" alt="Rollo Unipolar">
+            <h3 class="titulo-producto">Rollo Unipolar 2,5mm x 100m</h3>
+            <div class="precio-viejo">$85.000</div>
+            <div class="precio-nuevo">$76.500</div>
+            <button class="boton-agregar" onclick="agregarAlCarrito('Rollo Unipolar 2,5mm', 76500)">Comprar</button>
+        </div>
+        <div class="tarjeta-producto">
+            <div class="etiqueta-descuento">15% OFF</div>
+            <img src="auricular-jbl.jpg" alt="Auricular JBL">
+            <h3 class="titulo-producto">Auricular JBL</h3>
+            <div class="precio-viejo">$25.000</div>
+            <div class="precio-nuevo">$21.250</div>
+            <button class="boton-agregar" onclick="agregarAlCarrito('Auricular JBL', 21250)">Comprar</button>
+        </div>
+        <div class="tarjeta-producto"> 
+            <div class="etiqueta-descuento">20% OFF</div>
+            <img src="reflectorsolar100w.jpg" alt="Reflector Solar 100W">
+            <h3 class="titulo-producto">Reflector Solar 100w + Panel</h3>
+            <div class="precio-viejo">$69.000</div>
+            <div class="precio-nuevo">$55.200</div>
+            <button class="boton-agregar" onclick="agregarAlCarrito('Reflector Solar 100w', 55200)">Comprar</button>
+        </div>
+        <div class="tarjeta-producto">
+            <div class="etiqueta-descuento">20% OFF</div>
+            <img src="jostickps4.jpg" alt="Joystick PS4">
+            <h3 class="titulo-producto">Joystick PS4</h3>
+            <div class="precio-viejo">$35.000</div>
+            <div class="precio-nuevo">$28.000</div>
+            <button class="boton-agregar" onclick="agregarAlCarrito('Joystick PS4', 28000)">Comprar</button>
+        </div>
+        <div class="tarjeta-producto">
+            <div class="etiqueta-descuento">20% OFF</div>
+            <img src="reflectorsolar50w.jpg" alt="Reflector Solar 50W">
+            <h3 class="titulo-producto">Reflector Solar 50w + Panel</h3>
+            <div class="precio-viejo">$49.000</div>
+            <div class="precio-nuevo">$39.200</div>
+            <button class="boton-agregar" onclick="agregarAlCarrito('Reflector Solar 50w', 39200)">Comprar</button>
+        </div>
+
+    </div> 
+
+    </div> ```
+
 
         <br><br>
 
@@ -85,35 +161,262 @@
             <button class="btn-cat" onclick="filtrar('cargadores')">Cargadores y Cables</button>
             <button class="btn-cat" onclick="filtrar('computacion')">Computación</button>
             <button class="btn-cat" onclick="filtrar('electricidad')">Electricidad</button>
+            <button class="btn-cat" onclick="filtrar('soportes')">Soportes</button>
+            <button class="btn-cat" onclick="filtrar('audio')">Audio</button>
+            <button class="btn-cat" onclick="filtrar('iluminacion')">Iluminación</button>
         </div>
 
         <div class="grilla-productos">
-            <div class="tarjeta-producto item-categoria" data-categoria="auriculares">
-                <div class="etiqueta-descuento">20% OFF</div>
-                <img src="auricular-m25.jpg" alt="Auricular M25">
-                <h3 class="titulo-producto">Auricular M25</h3>
-                <div class="precio-viejo">$15.000</div>
-                <div class="precio-nuevo">$12.000</div>
-                <button class="boton-agregar" onclick="agregarAlCarrito('Auricular M25', 12000)">Comprar</button>
+    <div class="tarjeta-producto item-categoria" data-categoria="computacion" data-tags="señal waifai antena compu pc internet wifi usb">
+    <div class="etiqueta-descuento">20% OFF</div>
+    <img src="antena-wifi.jpg" alt="Antena Wifi">
+    <h3 class="titulo-producto">Antena Wifi USB</h3>
+    <div class="precio-viejo">$10.625</div>
+    <div class="precio-nuevo">$8.500</div>
+    <button class="boton-agregar" onclick="agregarAlCarrito('Antena Wifi', 8500)">Comprar</button>
+</div>
+
+<div class="tarjeta-producto item-categoria" data-categoria="auriculares" data-tags="auris inalambrico bluetooth musica sonido celu">
+    <div class="etiqueta-descuento">20% OFF</div>
+    <img src="auricular-m25.jpg" alt="Auricular M25">
+    <h3 class="titulo-producto">Auricular M25</h3>
+    <div class="precio-viejo">$15.000</div>
+    <div class="precio-nuevo">$12.000</div>
+    <button class="boton-agregar" onclick="agregarAlCarrito('Auricular M25', 12000)">Comprar</button>
+
             </div>
-            <div class="tarjeta-producto item-categoria" data-categoria="computacion">
-                <div class="etiqueta-descuento">20% OFF</div>
-                <img src="antena-wifi.jpg" alt="Antena Wifi">
-                <h3 class="titulo-producto">Antena Wifi USB</h3>
-                <div class="precio-viejo">$10.625</div>
-                <div class="precio-nuevo">$8.500</div>
-                <button class="boton-agregar" onclick="agregarAlCarrito('Antena Wifi', 8500)">Comprar</button>
-            </div>
-            <div class="tarjeta-producto item-categoria" data-categoria="electricidad">
+            <div class="tarjeta-producto item-categoria" data-categoria="electricidad" data-tags="cables 2,5 normalizado trefilcon iram rollo electricidad">
                 <div class="etiqueta-descuento">10% OFF</div>
                 <img src="cables-trefilcon.jpg" alt="Rollo Unipolar">
                 <h3 class="titulo-producto">Rollo Unipolar 2,5mm x 100m</h3>
                 <div class="precio-viejo">$85.000</div>
                 <div class="precio-nuevo">$76.500</div>
                 <button class="boton-agregar" onclick="agregarAlCarrito('Rollo Unipolar 2,5mm', 76500)">Comprar</button>
+                 
+</div>
+                <div class="tarjeta-producto item-categoria" data-categoria="audio" data-tags="cable auxiliar audio musica estereo auto sonido parlante">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="auxiliar.jpg" alt="Cable Auxiliar">
+                <h3 class="titulo-producto">Cable Auxiliar</h3>
+                <div class="precio-viejo">$3.900</div>
+                <div class="precio-nuevo">$3.120</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Cable Auxiliar', 3120)">Comprar</button>
+</div>
+
+                <div class="tarjeta-producto item-categoria" data-categoria="auriculares" data-tags="auricular jbl vincha sonido atr piola musica">
+                <div class="etiqueta-descuento">15% OFF</div>
+                <img src="auricular-jbl.jpg" alt="Auricular JBL">
+                <h3 class="titulo-producto">Auricular JBL</h3>
+                <div class="precio-viejo">$25.000</div>
+                <div class="precio-nuevo">$21.250</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Auricular JBL', 21250)">Comprar</button>
+</div>
+
+            <div class="tarjeta-producto item-categoria" data-categoria="cargadores" data-tags="cabezal enchufe cargador iphone aifon apple pared ios 20w">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="cabezal-iphone.jpg" alt="Cabezal iPhone">
+                <h3 class="titulo-producto">Cabezal iPhone</h3>
+                <div class="precio-viejo">$9.000</div>
+                <div class="precio-nuevo">$7.200</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Cabezal iPhone', 7200)">Comprar</button>
+</div>
+
+            <div class="tarjeta-producto item-categoria" data-categoria="cargadores" data-tags="cabezal enchufe cargador motorola android pared pd 30w samsung">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="cabezal-motorola.jpg" alt="Cabezal Motorola">
+                <h3 class="titulo-producto">Cabezal Motorola</h3>
+                <div class="precio-viejo">$9.000</div>
+                <div class="precio-nuevo">$7.200</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Cabezal Motorola', 7200)">Comprar</button>
+</div>
+            <div class="tarjeta-producto item-categoria" data-categoria="cargadores" data-tags="cable c a c tipo c tipo-c carga rapida android samsung motorola">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="cable-c-a-c.jpg" alt="Cable C a C">
+                <h3 class="titulo-producto">Cable Tipo C a C</h3>
+                <div class="precio-viejo">$6.000</div>
+                <div class="precio-nuevo">$4.800</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Cable C a C', 4800)">Comprar</button>
+            
+ </div>
+            <div class="tarjeta-producto item-categoria" data-categoria="cargadores" data-tags="cable mallado usb lightning iphone aifon apple ios reforzado">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="cable-mallado-l.jpg" alt="Cable Mallado Lightning">
+                <h3 class="titulo-producto">Cable USB a Lightning</h3>
+                <div class="precio-viejo">$5.000</div>
+                <div class="precio-nuevo">$4.000</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Cable Lightning', 4000)">Comprar</button>
+            
+ </div>
+            <div class="tarjeta-producto item-categoria" data-categoria="cargadores" data-tags="cable motorola usb tipo c tipo-c carga rapida android 25w">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="cable-moto-25w.jpg" alt="Cable Motorola 25W">
+                <h3 class="titulo-producto">Cable Motorola 25w</h3>
+                <div class="precio-viejo">$5.000</div>
+                <div class="precio-nuevo">$4.000</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Cable Motorola 25w', 4000)">Comprar</button>
+            
+ </div>
+            <div class="tarjeta-producto item-categoria" data-categoria="cargadores" data-tags="cargador completo enchufe iphone aifon apple ios usb lightning pared">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="cargador-iphone-comple.jpg" alt="Cargador iPhone Completo">
+                <h3 class="titulo-producto">Cargador iPhone (Completo)</h3>
+                <div class="precio-viejo">$17.000</div>
+                <div class="precio-nuevo">$13.600</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Cargador iPhone', 13600)">Comprar</button>
+            
+ </div>
+            <div class="tarjeta-producto item-categoria" data-categoria="electricidad" data-tags="adaptador doble enchufe triple zapatilla electricidad toma patas">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="doble.jpg" alt="Adaptador Doble">
+                <h3 class="titulo-producto">Adaptador Doble</h3>
+                <div class="precio-viejo">$3.500</div>
+                <div class="precio-nuevo">$2.800</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Adaptador Doble', 2800)">Comprar</button>
+            
+  </div>      
+            <div class="tarjeta-producto item-categoria" data-categoria="iluminacion" data-tags="foco lampara emergencia luz led recargable corte bateria 15w bulbo">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="focosdemergencia15w.jpg" alt="Foco de Emergencia">
+                <h3 class="titulo-producto">Foco de Emergencia 15w</h3>
+                <div class="precio-viejo">$12.000</div>
+                <div class="precio-nuevo">$9.600</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Foco Emergencia 15w', 9600)">Comprar</button>
             </div>
-        </div>
-    </main>
+
+            <div class="tarjeta-producto item-categoria" data-categoria="auriculares" data-tags="auriculares gamer gaming juego noga pc consola microfono headset vincha">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="gamer-noga.jpg" alt="Auriculares Gamer">
+                <h3 class="titulo-producto">Auriculares Gamer</h3>
+                <div class="precio-viejo">$28.000</div>
+                <div class="precio-nuevo">$22.400</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Auriculares Gamer', 22400)">Comprar</button>
+            </div>
+
+            <div class="tarjeta-producto item-categoria" data-categoria="gamers" data-tags="joystick jostik yostik control mando play playstation 2 ps2 cable gamepad">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="jostickps2.jpg" alt="Joystick PS2">
+                <h3 class="titulo-producto">Joystick PS2</h3>
+                <div class="precio-viejo">$18.000</div>
+                <div class="precio-nuevo">$14.400</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Joystick PS2', 14400)">Comprar</button>
+            </div>
+
+            <div class="tarjeta-producto item-categoria" data-categoria="gamers" data-tags="joystick jostik yostik control mando play playstation 3 ps3 inalambrico bluetooth">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="jostickps3.jpg" alt="Joystick PS3">
+                <h3 class="titulo-producto">Joystick PS3</h3>
+                <div class="precio-viejo">$22.000</div>
+                <div class="precio-nuevo">$17.600</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Joystick PS3', 17600)">Comprar</button>
+            </div>
+
+            <div class="tarjeta-producto item-categoria" data-categoria="gamers" data-tags="joystick jostik yostik control mando play playstation 4 ps4 inalambrico bluetooth tactil">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="jostickps4.jpg" alt="Joystick PS4">
+                <h3 class="titulo-producto">Joystick PS4</h3>
+                <div class="precio-viejo">$35.000</div>
+                <div class="precio-nuevo">$28.000</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Joystick PS4', 28000)">Comprar</button>
+            </div>
+
+            <div class="tarjeta-producto item-categoria" data-categoria="iluminacion" data-tags="linterna recargable luz led portatil mano usb foco">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="linternablisterrecargada.jpg" alt="Linterna Recargable">
+                <h3 class="titulo-producto">Linterna Recargable</h3>
+                <div class="precio-viejo">$14.000</div>
+                <div class="precio-nuevo">$11.200</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Linterna Recargable', 11200)">Comprar</button>
+            </div>
+
+            <div class="tarjeta-producto item-categoria" data-categoria="computacion" data-tags="memoria micro sd 32gb kingston almacenamiento celular pendrive espacio tarjeta">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="memorias.jpg" alt="Memoria 32GB">
+                <h3 class="titulo-producto">Memoria Micro SD 32GB</h3>
+                <div class="precio-viejo">$28.000</div>
+                <div class="precio-nuevo">$22.400</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Memoria 32GB', 22400)">Comprar</button>
+            </div>
+
+            <div class="tarjeta-producto item-categoria" data-categoria="iluminacion" data-tags="linterna minera cabeza casco luz led recargable trabajo manos libres">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="minera.jpg" alt="Linterna Minera">
+                <h3 class="titulo-producto">Linterna Minera</h3>
+                <div class="precio-viejo">$12.000</div>
+                <div class="precio-nuevo">$9.600</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Linterna Minera', 9600)">Comprar</button>
+            </div>
+
+            <div class="tarjeta-producto item-categoria" data-categoria="audio" data-tags="parlante 4 pulgadas inalambrico bluetooth musica sonido portatil luces kbroad">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="parlante4.jpg" alt="Parlante 4 Pulgadas">
+                <h3 class="titulo-producto">Parlante 4" Bluetooth</h3>
+                <div class="precio-viejo">$20.000</div>
+                <div class="precio-nuevo">$16.000</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Parlante 4', 16000)">Comprar</button>
+            </div>
+
+            <div class="tarjeta-producto item-categoria" data-categoria="iluminacion" data-tags="reflector solar exterior panel 100w luz led patio jardin jortan ip66 farol">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="reflectorsolar100w.jpg" alt="Reflector Solar 100W">
+                <h3 class="titulo-producto">Reflector Solar 100w + Panel</h3>
+                <div class="precio-viejo">$69.000</div>
+                <div class="precio-nuevo">$55.200</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Reflector Solar 100w', 55200)">Comprar</button>
+            </div>
+            <div class="tarjeta-producto item-categoria" data-categoria="audio" data-tags="parlante 6,5 6.5w pulgadas microfono inalambrico bluetooth karaoke musica sonido portatil">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="parlante65.jpg" alt="Parlante 6.5 con Micrófono">
+                <h3 class="titulo-producto">Parlante 6.5" con Micrófono</h3>
+                <div class="precio-viejo">$26.000</div>
+                <div class="precio-nuevo">$20.800</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Parlante 6.5', 20800)">Comprar</button>
+            </div>
+
+            <div class="tarjeta-producto item-categoria" data-categoria="iluminacion" data-tags="reflector solar exterior panel 50w luz led patio jardin farol">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="reflectorsolar50w.jpg" alt="Reflector Solar 50W">
+                <h3 class="titulo-producto">Reflector Solar 50w + Panel</h3>
+                <div class="precio-viejo">$49.000</div>
+                <div class="precio-nuevo">$39.200</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Reflector Solar 50w', 39200)">Comprar</button>
+            </div>
+
+            <div class="tarjeta-producto item-categoria" data-categoria="soportes" data-tags="soporte auto celular coche gps agarre iman rejilla parabrisas">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="soportecelauto.jpg" alt="Soporte de Auto">
+                <h3 class="titulo-producto">Soporte de Auto para Celular</h3>
+                <div class="precio-viejo">$10.000</div>
+                <div class="precio-nuevo">$8.000</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Soporte de Auto', 8000)">Comprar</button>
+            </div>
+
+            <div class="tarjeta-producto item-categoria" data-categoria="iluminacion" data-tags="tira led 5050 5mts 5 metros rgb colores control luces decoracion">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="tirasdeled50505mtsrgb.jpg" alt="Tira de LED 5050">
+                <h3 class="titulo-producto">Tira de LED 5050 5mts RGB</h3>
+                <div class="precio-viejo">$18.000</div>
+                <div class="precio-nuevo">$14.400</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Tira LED 5mts', 14400)">Comprar</button>
+            </div>
+
+            <div class="tarjeta-producto item-categoria" data-categoria="electricidad" data-tags="adaptador triple enchufe zapatilla electricidad toma patas tres">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="triple.jpg" alt="Adaptador Triple">
+                <h3 class="titulo-producto">Adaptador Triple</h3>
+                <div class="precio-viejo">$3.500</div>
+                <div class="precio-nuevo">$2.800</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Adaptador Triple', 2800)">Comprar</button>
+            </div>
+
+            <div class="tarjeta-producto item-categoria" data-categoria="cargadores" data-tags="cable usb lightning iphone aifon apple ios carga datos">
+                <div class="etiqueta-descuento">20% OFF</div>
+                <img src="usb-l.jpg" alt="Cable USB a Lightning">
+                <h3 class="titulo-producto">Cable USB a Lightning</h3>
+                <div class="precio-viejo">$6.500</div>
+                <div class="precio-nuevo">$5.200</div>
+                <button class="boton-agregar" onclick="agregarAlCarrito('Cable USB a Lightning', 5200)">Comprar</button>
+</div>   
+</main>
 
     <footer class="pie-pagina">
         <div class="footer-contenido">
@@ -157,19 +460,56 @@
 
     <script>
         // FILTRO
-        function filtrar(categoriaElegida) {
-            let botones = document.querySelectorAll('.btn-cat');
-            botones.forEach(boton => boton.classList.remove('activo'));
-            event.target.classList.add('activo');
-            let productos = document.querySelectorAll('.item-categoria');
-            productos.forEach(producto => {
-                if (categoriaElegida === 'todos' || producto.getAttribute('data-categoria') === categoriaElegida) {
-                    producto.style.display = 'block';
-                } else {
-                    producto.style.display = 'none';
-                }
-            });
+       // NUEVO MOTOR DE BÚSQUEDA INTELIGENTE
+function buscarProductos() {
+    // 1. Qué escribió y qué categoría eligió el usuario
+    let texto = document.getElementById('texto-busqueda').value.toLowerCase();
+    let categoriaElegida = document.getElementById('categoria-busqueda').value;
+    
+    // 2. Traer todos los productos
+    let productos = document.querySelectorAll('.item-categoria');
+
+    productos.forEach(producto => {
+        // Obtenemos el título, la categoría y los tags ocultos
+        let titulo = producto.querySelector('.titulo-producto').innerText.toLowerCase();
+        let categoriaProducto = producto.getAttribute('data-categoria');
+        let tags = producto.getAttribute('data-tags') ? producto.getAttribute('data-tags').toLowerCase() : "";
+
+        // Verificamos si coincide la categoría
+        let coincideCategoria = (categoriaElegida === 'todos' || categoriaProducto === categoriaElegida);
+        
+        // Verificamos si coincide el texto (en el título o en los tags)
+        let coincideTexto = (texto === '' || titulo.includes(texto) || tags.includes(texto));
+
+        // Si cumple las dos condiciones, se muestra; si no, se oculta
+        if (coincideCategoria && coincideTexto) {
+            producto.style.display = 'block';
+        } else {
+            producto.style.display = 'none';
         }
+    });
+
+    // Opcional: Hace que la pantalla baje suavemente hasta el catálogo para ver los resultados
+    document.querySelector('.grilla-productos').scrollIntoView({ behavior: 'smooth' });
+}
+
+// CONECTAR LOS BOTONES DEL CATÁLOGO CON EL BUSCADOR DE ARRIBA
+function filtrar(categoriaBoton) {
+    // Si tocan un botón abajo, limpiamos el texto y cambiamos la categoría en la barra de arriba
+    document.getElementById('texto-busqueda').value = '';
+    document.getElementById('categoria-busqueda').value = categoriaBoton;
+    
+    // Pintamos de oscuro el botón seleccionado
+    let botones = document.querySelectorAll('.btn-cat');
+    botones.forEach(boton => boton.classList.remove('activo'));
+    event.target.classList.add('activo');
+
+    // Hacemos correr el buscador
+    buscarProductos();
+}
+                
+            
+        
 
         // CARRITO
         let carrito = []; 
@@ -216,19 +556,7 @@
             window.open(`https://wa.me/${numeroWhatsApp}?text=${mensaje}`, '_blank');
         }
 
-        // AUTO-SCROLL DESTACADOS
-        function autoScrollDestacados() {
-            const contenedor = document.querySelector('.carrusel-destacados');
-            if (!contenedor) return;
-            setInterval(() => {
-                if (contenedor.scrollLeft + contenedor.clientWidth >= contenedor.scrollWidth - 10) {
-                    contenedor.scrollTo({ left: 0, behavior: 'smooth' });
-                } else {
-                    contenedor.scrollBy({ left: 300, behavior: 'smooth' });
-                }
-            }, 4000);
-        }
-        window.onload = autoScrollDestacados;
+       
     </script>
 
     <script type="module">
