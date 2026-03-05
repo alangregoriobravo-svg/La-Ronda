@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Ronda - Tienda Online</title>
-    <link href="[https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap](https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap)" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilos.css?v=2">
     <meta property="og:title" content="La Ronda - Boutique de Barrio & Mercado">
     
@@ -746,9 +746,12 @@
         }
     </script>
 
-    <script type="module">
-        import { initializeApp } from "[https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js](https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js)";
-        import { getAuth, onAuthStateChanged, signOut } from "[https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js](https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js)";
+   <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+        
+        // LAS HERRAMIENTAS DE LA BASE DE DATOS
+        import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
 
         const firebaseConfig = {
           apiKey: "AIzaSyDTk7jVyz6wacaXF1L-mDdshz0xBMn9WBI",
@@ -759,9 +762,14 @@
           appId: "1:347719632529:web:e74f4a02b62b3233122130"
         };
 
+        // INICIALIZAMOS TODO UNA SOLA VEZ
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
+        const db = getFirestore(app);
 
+        // ==========================================
+        // CÓDIGO DE USUARIOS (El que ya tenías)
+        // ==========================================
         const btnIngreso = document.getElementById('btn-ingreso');
         const menuUsuario = document.getElementById('menu-usuario');
         const txtNombreUsuario = document.getElementById('nombre-usuario');
@@ -784,6 +792,27 @@
                 signOut(auth).then(() => { window.location.reload(); });
             });
         }
+
+        // ==========================================
+        // PRUEBA DE CONEXIÓN A LA BÓVEDA
+        // ==========================================
+        async function probarBoveda() {
+            try {
+                // Le pedimos a Firebase que traiga la carpeta "productos"
+                const querySnapshot = await getDocs(collection(db, "productos"));
+                
+                // Por cada producto que encuentre, nos tira una alerta
+                querySnapshot.forEach((doc) => {
+                    let producto = doc.data();
+                    alert("¡Éxito! Firebase encontró: " + producto.nombre + " a $" + producto.precio);
+                });
+            } catch (error) {
+                alert("Uy, falló la conexión: " + error);
+            }
+        }
+
+        // Ejecutamos la prueba
+        probarBoveda();
     </script>
 </body>
 </html>
